@@ -8,14 +8,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">viola 維護介面</a>
+            <a class="navbar-brand" href="#">viola ADM</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <!--<li class="active"><a href="#">統計圖表<span class="sr-only">(current)</span></a></li>-->
-                <li><a href="/">Dashboard</a></li>
+                <li><a href="{{action('DashboardController@showDashboard')}}">Dashboard</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Maintain<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -30,16 +30,7 @@
                         <li><a href="#">modify config</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Demo<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Intro</a></li>
-                        <li><a href="#">news info</a></li>
-                        <li><a href="#">dm</a></li>
-                        <li><a href="#">contact</a></li>
-                        <li><a href="#">blalalaa</a></li>
-                    </ul>
-                </li>
+                <li><a href="/">Demo</a></li>
             </ul>
 
         </div><!-- /.navbar-collapse -->

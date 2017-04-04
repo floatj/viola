@@ -1,0 +1,9 @@
+<?php
+/**
+ * 基本設定檔
+ *
+ */
+
+return [
+    'sup_no' => 5566      //supplier no
+];

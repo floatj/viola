@@ -11,7 +11,22 @@
 |
 */
 
-//首頁
+/* admin */
+Route::get('/LaOpera', 'DashboardController@showDashboard');
+/*
 Route::get('/', function () {
     return view('dashboard');
 });
+*/
+
+
+/* Demo */
+
+//首頁
+Route::get('/', 'SupplierController@showInfo');
+//sup info
+Route::get('/demo/', 'SupplierController@showInfo');
+//dm
+Route::get('/demo/product/', 'ProductController@showAllProducts');
+//newsinfo
+Route::get('/demo/news/', 'NewsinfoController@showAllNewsinfo');

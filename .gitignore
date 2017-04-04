@@ -7,3 +7,6 @@
 Homestead.json
 Homestead.yaml
 .env
+
+# config file
+config/viola.php

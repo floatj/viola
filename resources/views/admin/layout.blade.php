@@ -22,7 +22,7 @@
 </head>
 <body>
 
-@include('menu')
+@include('admin.menu')
 
 <div class="container-fluid"><!--body的 div container-->
     @yield('content')
