@@ -11,6 +11,7 @@
 |
 */
 
+//首頁
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
