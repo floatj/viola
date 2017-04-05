@@ -12,6 +12,7 @@ class Product extends Model
 
     //欄位名稱
     const FIELD_SUP_NO = 'sup_no';
+    const FIELD_REC_NO = 'recno';
 
     /**
      *
@@ -23,7 +24,22 @@ class Product extends Model
     public static function getAllProducts($sup_no)
     {
         $query = self::where(self::FIELD_SUP_NO, $sup_no)
-            ->get();
+            ->paginate(10);
+            //->get();
+
+        return $query;
+    }
+
+    /**
+     * 取得單一 product 的詳細資料 (by recno)
+     *
+     * @int $recno record_no
+     */
+    public static function getProduct($rec_no)
+    {
+        $query = self::where(self::FIELD_REC_NO, $rec_no)
+            ->paginate(10);
+        //->get();
 
         return $query;
     }

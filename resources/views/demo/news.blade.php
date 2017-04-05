@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <h1>News info</h1>
+    <h1>N信件分類info-測試blalalaa</h1>
 
     <table class="table table-striped table-hover">
         <thead>

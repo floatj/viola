@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">viola ADM</a>
+            <a class="navbar-brand" href="#">viola</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

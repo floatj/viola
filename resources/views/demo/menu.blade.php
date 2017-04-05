@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">字典系統-測試-Demo</a>
+            <a class="navbar-brand" href="#">信件系統222-測試-Demo</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,10 +16,11 @@
             <ul class="nav navbar-nav">
                 <!--<li class="active"><a href="#">統計圖表<span class="sr-only">(current)</span></a></li>-->
                 <li><a href="/">Home</a></li>
-                <li><a href="{{action('SupplierController@showInfo')}}">supplier info</a></li>
-                <li><a href="{{action('NewsinfoController@showAllNewsinfo')}}">news info</a></li>
-                <li><a href="{{action('ProductController@showAllProducts')}}">dm</a></li>
-                <li><a href="#">contact</a></li>
+                <li><a href="{{action('SupplierController@showInfo')}}">s信件info</a></li>
+                <li><a href="{{action('NewsinfoController@showAllNewsinfo')}}">n錯誤info</a></li>
+                <li><a href="{{action('CustomController@showCustomPage')}}">c分類page</a></li>
+                <li><a href="{{action('ProductController@showAllProducts')}}">d統計m</a></li>
+                <li><a href="#">con連接t</a></li>
                 <li><a href="#">blalalaa</a></li>
             </ul>
 

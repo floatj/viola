@@ -10,9 +10,8 @@ class ProductController extends Controller
 {
     //
     /**
-     * 取得預設 supplier 的基本資料
+     * 取得預設 supplier 的所有 Products
      */
-
     public function showAllProducts()
     {
 
@@ -20,6 +19,18 @@ class ProductController extends Controller
 
         $products = \App\Product::getAllProducts($sup_no);
 
-        return view('demo/product', ["products"=>$products]);
+        return view('demo/product_list', ["products"=>$products]);
+    }
+
+    /**
+     * 取得單一 product 詳細資料
+     */
+    public function showProduct($recno)
+    {
+        //$sup_no = \App\Lib\Common::getSupplierNo();
+
+        $product = \App\Product::getProduct($recno);
+
+        return view('demo/product', ["product"=>$product]);
     }
 }

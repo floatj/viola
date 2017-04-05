@@ -12,7 +12,7 @@
 */
 
 /* admin */
-Route::get('/LaOpera', 'DashboardController@showDashboard');
+Route::get('/admin', 'DashboardController@showDashboard');
 /*
 Route::get('/', function () {
     return view('dashboard');
@@ -27,6 +27,10 @@ Route::get('/', 'SupplierController@showInfo');
 //sup info
 Route::get('/demo/', 'SupplierController@showInfo');
 //dm
-Route::get('/demo/product/', 'ProductController@showAllProducts');
+Route::get('/demo/products/', 'ProductController@showAllProducts');
+//dm-product
+Route::get('/demo/product/{recno}', 'ProductController@showProduct');
 //newsinfo
 Route::get('/demo/news/', 'NewsinfoController@showAllNewsinfo');
+//custompage
+Route::get('/demo/custom1/', 'CustomController@showCustomPage');

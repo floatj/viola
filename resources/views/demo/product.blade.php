@@ -3,30 +3,29 @@
 
 @section('content')
 
-    <h1>DM</h1>
+    <h1>D-Mail S 信件內容--測試</h1>
 
     <table class="table table-striped table-hover">
         <thead>
         <tr>
-            <th>[P-key] recno</th>
-            <th>pname</th>
-            <th>pnum</th>
-            <th>fprice</th>
-            <!--<th>memo</th>-->
+            <th>column name</th>
+            <th>value</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($products as $product)
             <tr>
+                <td>recno</td>
                 <td>{{$product->recno}}</td>
-                <td>{{$product->pname}}</td>
-                <td>{{$product->pnum}}</td>
-                <td>{{$product->fprice}}</td>
-                <!--<td>{{$product->memo}}</td>-->
             </tr>
-        @endforeach
+            <tr>
+                <td>pname</td>
+                <td>{{$product->pname}}</td>
+            </tr>
+            <tr>
+                <td>pnnum</td>
+                <td>{{$product->pnum}}</td>
+            </tr>
         </tbody>
     </table>
-
 
 @stop

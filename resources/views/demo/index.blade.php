@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h1>字典系統--測試頁面</h1>
+    <h1>信件系統22222--測試頁面</h1>
     <h2>測試blalalalaalala</h2>
     <p>{{$supplier[0]->name}}</p>
     <p>{{$supplier[0]->memo}}</p>
