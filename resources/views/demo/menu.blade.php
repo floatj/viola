@@ -18,7 +18,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="{{action('SupplierController@showInfo')}}">s信件info</a></li>
                 <li><a href="{{action('NewsinfoController@showAllNewsinfo')}}">n錯誤info</a></li>
-                <li><a href="{{action('CustomController@showCustomPage')}}">c分類page</a></li>
+                <li><a href="{{action('CustomController@showCustomPage')}}">cust自訂分累om_pg</a></li>
                 <li><a href="{{action('ProductController@showAllProducts')}}">d統計m</a></li>
                 <li><a href="#">con連接t</a></li>
                 <li><a href="#">blalalaa</a></li>
