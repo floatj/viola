@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Product;
+use \App\CategoryMember;
 use App\Lib\Common;
 
 class ProductController extends Controller
@@ -12,14 +13,19 @@ class ProductController extends Controller
     /**
      * 取得預設 supplier 的所有 Products
      */
+
+    protected $offset = 10;     //預設分頁筆數: 10
+
     public function showAllProducts()
     {
 
         $sup_no = \App\Lib\Common::getSupplierNo();
 
-        $products = \App\Product::getAllProducts($sup_no);
+        $products = \App\Product::getAllProducts($sup_no, $this->offset);
 
-        return view('demo/product_list', ["products"=>$products]);
+        $categories = $this->getAllCategory($sup_no);  //取分類
+
+        return view('demo/product_list', ["products"=>$products, "categories"=>$categories]);
     }
 
     /**
@@ -33,4 +39,17 @@ class ProductController extends Controller
 
         return view('demo/product', ["product"=>$product]);
     }
+
+    /**
+     * 取得所有分類
+     */
+    public function getAllCategory($sup_no)
+    {
+        $category_member = \App\CategoryMember::getAllCategoryMember($sup_no);
+
+        return $category_member;
+
+    }
+
+
 }

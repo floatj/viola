@@ -21,10 +21,10 @@ class Product extends Model
      * @int $sup_no  supplier number for identity
      */
 
-    public static function getAllProducts($sup_no)
+    public static function getAllProducts($sup_no, $offset)
     {
         $query = self::where(self::FIELD_SUP_NO, $sup_no)
-            ->paginate(10);
+            ->paginate($offset);     //分頁
             //->get();
 
         return $query;
