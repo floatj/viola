@@ -23,7 +23,7 @@ class ProductController extends Controller
 
         $products = \App\Product::getAllProducts($sup_no, $this->offset);
 
-        $categories = $this->getAllCategory($sup_no);  //取分類
+        $categories = $this->getAllCategory($sup_no, 1);  //取分類
 
         return view('demo/product_list', ["products"=>$products, "categories"=>$categories]);
     }
@@ -43,9 +43,9 @@ class ProductController extends Controller
     /**
      * 取得所有分類
      */
-    public function getAllCategory($sup_no)
+    public function getAllCategory($sup_no, $cno)
     {
-        $category_member = \App\CategoryMember::getAllCategoryMember($sup_no);
+        $category_member = \App\CategoryMember::getAllCategoryMember($sup_no, $cno);
 
         return $category_member;
 
