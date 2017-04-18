@@ -22,15 +22,25 @@ Route::get('/', function () {
 
 /* Demo */
 $custom_path="demo";
+
 //首頁
 Route::get('/', 'SupplierController@showInfo');
+
 //sup info
 Route::get('/'.$custom_path.'/', 'SupplierController@showInfo');
-//dm
-Route::get('/'.$custom_path.'/products/', 'ProductController@showAllProducts');
-//dm-product
+
+//dm list
+Route::get('/'.$custom_path.'/products/', 'ProductController@showProductsList');
+//Route::get('/'.$custom_path.'/category/', 'ProductController@showProductsList');
+
+//dm-product-page
 Route::get('/'.$custom_path.'/product/{recno}', 'ProductController@showProduct');
+
+//dm-by-CategoryMember
+Route::get('/'.$custom_path.'/category/{class_no?}', 'ProductController@showProductsList');
+
 //newsinfo
 Route::get('/'.$custom_path.'/news/', 'NewsinfoController@showAllNewsinfo');
+
 //custompage
 Route::get('/'.$custom_path.'/custom1/', 'CustomController@showCustomPage');

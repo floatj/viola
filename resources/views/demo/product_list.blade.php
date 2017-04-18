@@ -4,23 +4,37 @@
 @section('content')
 <!--側欄CSS，借放-->
 <style>
+    /*
     .side li:hover {
         background: #FFE100 !important;
+    }
+    */
+
+    /* ul 不要有點點 */
+    .side{
+        list-style-type: none;
     }
 </style>
 
     <h1>D-Mail__test__所有信件清單--測試</h1>
 
-    <!--側邊欄-->
+    <!-- sidebar_category -->
     <div id="sidebar" style="float:left; width:200px; margin:20px;">
-        <ul class="side" style="list-style-type: none;">
+        <ul class="side">
             @foreach($categories as $category)
-                <li>{{$category->name}}</li>
+                <li>{{$category->name}}
+                    <!--如果有第二層，需要顯示-->
+                    <ul class="side">
+                        <li>階層2--項目1</li>
+                        <li>階層2--項目2</li>
+                        <li>階層2--項目3</li>
+                    </ul>
+                </li>
             @endforeach
         </ul>
     </div>
 
-    <!--Products-->
+    <!-- Products -->
     <div id="body-area" style="float:left; margin:20px;">
         <table class="table table-striped table-hover">
             <caption>Pd</caption>

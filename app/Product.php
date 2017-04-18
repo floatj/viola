@@ -13,6 +13,8 @@ class Product extends Model
     //欄位名稱
     const FIELD_SUP_NO = 'sup_no';
     const FIELD_REC_NO = 'recno';
+    const FIELD_CLASS_NO = 'c_no_1';  //分類欄位名稱
+    const FIELD_CLASS_MC1 = 'mc1';    //分類欄位名稱
 
     /**
      *
@@ -21,9 +23,12 @@ class Product extends Model
      * @int $sup_no  supplier number for identity
      */
 
-    public static function getAllProducts($sup_no, $offset)
+    public static function getAllProducts($sup_no, $c_no = null, $offset)
     {
         $query = self::where(self::FIELD_SUP_NO, $sup_no)
+            ->where(function($query) use ($c_no) {
+                ($c_no != null) and $query->where(self::FIELD_CLASS_MC1, $c_no);     //取指定層數的分類;
+            })
             ->paginate($offset);     //分頁
             //->get();
 
