@@ -45,7 +45,8 @@ class CategoryMember extends Model
 
         $query = self::where(self::FIELD_SUP_NO, $sup_no)
             ->where(self::FIELD_CLASS_DEPTH, $depth)        //取指定階層深度（1, 2, 3）的分類
-            ->orderBy(self::FIELD_CLASS_LEVEL_1, 'ASC')     //@TODO: 排序欄位，會依照階層不同異動？ 應該是 自身為階層幾，就要用階層幾的ID排序
+            //->orderBy(self::FIELD_CLASS_LEVEL_1, 'ASC')   //@TODO: 排序欄位，會依照階層不同異動？ 應該是 自身為階層幾，就要用階層幾的ID排序
+            ->orderBy(self::FIELD_SORT, 'ASC')
                                                             //@TODO: 不確定是要用哪一個欄位排序 = =
                 //以下為推測....
                 //排序有可能是

@@ -14,7 +14,10 @@ class Product extends Model
     const FIELD_SUP_NO = 'sup_no';
     const FIELD_REC_NO = 'recno';
     const FIELD_CLASS_NO = 'c_no_1';  //分類欄位名稱
+
     const FIELD_CLASS_MC1 = 'mc1';    //分類欄位名稱
+    const FIELD_CLASS_MC2 = 'mc2';    //分類欄位名稱
+    const FIELD_CLASS_MC3 = 'mc3';    //分類欄位名稱
 
     /**
      *
@@ -48,5 +51,27 @@ class Product extends Model
 
         return $query;
     }
+
+    /**
+     * 取 特定階層 / 特定 class 的 dm 數量 (先指定階層(1,2,3)，再指定class_id / mc[1,2,3] )
+     *
+     * @int $level      階層(1,2,3)，如不指定預設值為1
+     * @int $class_no   分類ID，如不指定預設值為 null 表示查詢所有分類dm 總數量
+     */
+    public static function getProductsCount($level=1, $class_no=null)
+    {
+        $query = self::select(DB::raw('count(*) as count'))
+
+            ->where(function($query) use ($class_no, $level) {
+                ($level == 1) and $query->where(self::FIELD_CLASS_MC1, $class_no);   //第1層取 mc1
+                ($level == 2) and $query->where(self::FIELD_CLASS_MC2, $class_no);   //第2層取 mc2
+                ($level == 3) and $query->where(self::FIELD_CLASS_MC3, $class_no);   //第3層取 mc3
+
+            })
+            ->get();
+
+        return $query;
+    }
+
 
 }

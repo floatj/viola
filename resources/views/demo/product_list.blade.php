@@ -20,15 +20,20 @@
 
     <!-- sidebar_category -->
     <div id="sidebar" style="float:left; width:200px; margin:20px;">
+        <!--第一層分類-->
         <ul class="side">
             @foreach($categories as $category)
-                <li>{{$category->name}}
-                    <!--如果有第二層，需要顯示-->
+                <!--分類名稱和該分類項目的數量-->
+                <li>{{$category->name}} ({{$category->count or '???'}})
+                    <!--第二層分類，如果有則需要顯示-->
+                    @if(!empty($category2))
                     <ul class="side">
-                        <li>階層2--項目1</li>
-                        <li>階層2--項目2</li>
-                        <li>階層2--項目3</li>
+                        @foreach($categories2 as $category2)
+                            <li>{{$category2->name}}</li>
+                        @endforeach
                     </ul>
+                    @endif
+                    <!---->
                 </li>
             @endforeach
         </ul>
