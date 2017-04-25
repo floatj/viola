@@ -35,10 +35,13 @@ class ProductController extends Controller
     {
 
         $sup_no = \App\Lib\Common::getSupplierNo();
-
+        //取得所有產品清單
         $products = \App\Product::getAllProducts($sup_no, $class_no, $this->offset);
+        
+        //取所有階層分類
+        $categories = $this->getAllCategory($sup_no);
 
-        $categories = $this->getAllCategory($sup_no);  //取所有階層分類
+        //取所有階層數量
 
         return view('demo/product_list', ["products"=>$products, "categories"=>$categories]);
     }
