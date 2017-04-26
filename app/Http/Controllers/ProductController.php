@@ -40,6 +40,15 @@ class ProductController extends Controller
         
         //取所有階層分類
         $categories = $this->getAllCategory($sup_no);
+    
+        for($i=0;$i<count($categories);$i++)
+        {
+            $class_no = $categories[$i]->c_no_1;
+            $count = \App\Product::getProductsCount(1, $class_no);      //取第一層分類數量
+
+            //設定分類階層物件該項目的 count
+            $categories[$i]->count = $count;
+        }
 
         //取所有階層數量
 
