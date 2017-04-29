@@ -45,9 +45,14 @@ class Product extends Model
      */
     public static function getProduct($rec_no)
     {
+
         $query = self::where(self::FIELD_REC_NO, $rec_no)
-            ->paginate(10);
-        //->get();
+            //->paginate(10);
+        ->get()
+        ->first();  //只會有一項，所以直接取那一項，避免在 view 還要指定 collection[0]
+        //->toArray();
+        //print_r ($query);
+        //exit;
 
         return $query;
     }
@@ -60,15 +65,14 @@ class Product extends Model
      */
     public static function getProductsCount($level=1, $class_no=null)
     {
-        $query = self::select(DB::raw('count(*) as count'))
-
-            ->where(function($query) use ($class_no, $level) {
+        $query = self::where(function($query) use ($class_no, $level) {
                 ($level == 1) and $query->where(self::FIELD_CLASS_MC1, $class_no);   //第1層取 mc1
                 ($level == 2) and $query->where(self::FIELD_CLASS_MC2, $class_no);   //第2層取 mc2
                 ($level == 3) and $query->where(self::FIELD_CLASS_MC3, $class_no);   //第3層取 mc3
 
             })
-            ->get();
+            ->count();
+
 
         return $query;
     }

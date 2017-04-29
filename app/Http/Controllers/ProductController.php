@@ -62,9 +62,25 @@ class ProductController extends Controller
     {
         //$sup_no = \App\Lib\Common::getSupplierNo();
 
-        $product = \App\Product::getProduct($recno);
+        $product = \App\Product:: getProduct($recno);   //取得 product 資料
+        $image_path = $this->getProductImage($recno);   //取得 image 路徑
 
-        return view('demo/product', ["product"=>$product]);
+        return view('demo/product', ["product"=>$product, "image_path"=>$image_path]);
+    }
+
+    /**
+     * 取得單一 product image 路徑
+     *
+     * @param $recno
+     * @return string
+     */
+    public function getProductImage($recno)
+    {
+        $host = \Config::get('viola.dm_image_path');
+        $image_path = $recno;
+        $ext = ".jpg";
+
+        return "$host"."/"."$image_path".$ext;
     }
 
     /**

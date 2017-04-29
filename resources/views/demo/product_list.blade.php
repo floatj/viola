@@ -24,7 +24,7 @@
         <ul class="side">
             @foreach($categories as $category)
                 <!--分類名稱和該分類項目的數量-->
-                <li>{{$category->name}} ({{$category->count or '???'}})
+                <li>{{$category->name}} <span style="color:blue;">({{$category->count or '???'}})</span>
                     <!--第二層分類，如果有則需要顯示-->
                     @if(!empty($category2))
                     <ul class="side">
