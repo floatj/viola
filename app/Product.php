@@ -73,7 +73,6 @@ class Product extends Model
             })
             ->count();
 
-
         return $query;
     }
 
