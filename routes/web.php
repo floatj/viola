@@ -26,21 +26,37 @@ $custom_path="demo";
 //首頁
 Route::get('/', 'SupplierController@showInfo');
 
+//---
+
 //sup info
 Route::get('/'.$custom_path.'/', 'SupplierController@showInfo');
 
-//dm list
-Route::get('/'.$custom_path.'/products/', 'ProductController@showProductsList');
-//Route::get('/'.$custom_path.'/category/', 'ProductController@showProductsList');
+//---
 
-//dm-product-page
-Route::get('/'.$custom_path.'/product/{recno}', 'ProductController@showProduct');
+//dm list
+Route::get('/'.$custom_path.'/products_list/', 'ProductController@showProductsList'); //list
+Route::get('/'.$custom_path.'/products/', 'ProductController@showProductsList2');  //img
+//Route::get('/'.$custom_path.'/category/', 'ProductController@showProductsList');
 
 //dm-by-CategoryMember
 Route::get('/'.$custom_path.'/category/{class_no?}', 'ProductController@showProductsList');
+Route::get('/category/{class_no?}', 'ProductController@showProductsList');
+
+//---
+
+//dm-product-page
+Route::get('/'.$custom_path.'/product/{recno}', 'ProductController@showProduct');
+Route::get('/product/{recno}', 'ProductController@showProduct');
+
+//---
 
 //newsinfo
 Route::get('/'.$custom_path.'/news/', 'NewsinfoController@showAllNewsinfo');
 
 //custompage
 Route::get('/'.$custom_path.'/custom1/', 'CustomController@showCustomPage');
+
+//contact
+Route::get('/'.$custom_path.'/contact/', 'ContactController@showContactPage');
+//map
+Route::get('/'.$custom_path.'/map/', 'ContactController@showMapPage');

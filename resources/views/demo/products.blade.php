@@ -16,7 +16,7 @@
     }
 </style>
 
-    <h1>D-Mail__test__所有信件清單(list)--測試</h1>
+    <h1>D-Mail__test__所有信件清單(img-based)--測試</h1>
 
     <!-- sidebar_category -->
     <div id="sidebar" style="float:left; width:200px; margin:20px;">
@@ -39,31 +39,14 @@
         </ul>
     </div>
 
-    <!-- Products -->
+    <!-- Pds -->
     <div id="body-area" style="float:left; margin:20px;">
-        <table class="table table-striped table-hover">
-            <caption>Pd</caption>
-            <thead>
-            <tr>
-                <th>[P-key] recno</th>
-                <th>pname</th>
-                <th>pnum</th>
-                <th>fprice</th>
-                <!--<th>memo</th>-->
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($products as $product)
-                <tr>
-                    <td>{{$product->recno}}</td>
-                    <td><a href="/product/{{$product->recno}}">{{$product->pname}}</a></td>
-                    <td>{{$product->pnum}}</td>
-                    <td>{{$product->fprice}}</td>
-                <!--<td>{{$product->memo}}</td>-->
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+        @foreach($products as $product)
+            <img src="{{$image_path or 'not_found.jpg'}}" alt="dm pic"/>
+            <br />
+            <a href="/product/{{$product->recno}}">{{$product->pname}}</a>
+            <br /><br />
+        @endforeach
         {{ $products->links() }}
     </div>
 

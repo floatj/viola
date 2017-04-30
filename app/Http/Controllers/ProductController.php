@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     //
 
-    protected $offset = 10;     //預設分頁筆數: 10
+    protected $offset = 12;     //預設分頁筆數
     const ALL_CATEGORY = 0;     //不分類
 
     /**
@@ -26,7 +26,7 @@ class ProductController extends Controller
     */
 
     /**
-     * 取得預設 supplier 指定分類的 Products_list 頁面資料 (含分類及 products)
+     * 取得預設 supplier 指定分類的 Products_list 頁面 (list-based) (含分類及 products)
      *
      * 參數：$class_no = 分類 ID, 若未指定則預設值為 0 表示不分類
      *
@@ -54,6 +54,38 @@ class ProductController extends Controller
 
         return view('demo/product_list', ["products"=>$products, "categories"=>$categories]);
     }
+
+    /**
+     * 取得預設 supplier 指定分類的 Products_list 頁面 (img based) (含分類及 products)
+     *
+     * 參數：$class_no = 分類 ID, 若未指定則預設值為 0 表示不分類
+     *
+     */
+    public function showProductsList2($class_no = null)
+    {
+
+        $sup_no = \App\Lib\Common::getSupplierNo();
+        //取得所有產品清單 (img)
+        $products = \App\Product::getAllProducts($sup_no, $class_no, $this->offset);
+        
+        //取所有階層分類
+        $categories = $this->getAllCategory($sup_no);
+    
+        for($i=0;$i<count($categories);$i++)
+        {
+            $class_no = $categories[$i]->c_no_1;
+            $count = \App\Product::getProductsCount(1, $class_no);      //取第一層分類數量
+
+            //設定分類階層物件該項目的 count
+            $categories[$i]->count = $count;
+        }
+
+        //取所有階層數量
+
+        return view('demo/products', ["products"=>$products, "categories"=>$categories]);
+    }
+
+
 
     /**
      * 取得單一 product 詳細資料

@@ -26,7 +26,7 @@ class Product extends Model
      * @int $sup_no  supplier number for identity
      */
 
-    public static function getAllProducts($sup_no, $c_no = null, $offset)
+    public static function getAllProducts($sup_no, $c_no = null, $offset = 12)
     {
         $query = self::where(self::FIELD_SUP_NO, $sup_no)
             ->where(function($query) use ($c_no) {
