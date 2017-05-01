@@ -31,7 +31,7 @@ class ProductController extends Controller
      * 參數：$class_no = 分類 ID, 若未指定則預設值為 0 表示不分類
      *
      */
-    public function showProductsList($class_no = null)
+    public function showProductsList($class_no = null, $class_no2=null)
     {
 
         $sup_no = \App\Lib\Common::getSupplierNo();
@@ -39,7 +39,7 @@ class ProductController extends Controller
         $products = \App\Product::getAllProducts($sup_no, $class_no, $this->offset);
         
         //取所有階層分類
-        $categories = $this->getAllCategory($sup_no);
+        $categories = $this->getAllCategory($sup_no, $class_no, $class_no2);
     
         for($i=0;$i<count($categories);$i++)
         {
@@ -61,7 +61,7 @@ class ProductController extends Controller
      * 參數：$class_no = 分類 ID, 若未指定則預設值為 0 表示不分類
      *
      */
-    public function showProductsList2($class_no = null)
+    public function showProductsList2($class_no = null, $class_no2=null)
     {
 
         $sup_no = \App\Lib\Common::getSupplierNo();
@@ -69,7 +69,7 @@ class ProductController extends Controller
         $products = \App\Product::getAllProducts($sup_no, $class_no, $this->offset);
         
         //取所有階層分類
-        $categories = $this->getAllCategory($sup_no);
+        $categories = $this->getAllCategory($sup_no, $class_no, $class_no2);
     
         for($i=0;$i<count($categories);$i++)
         {
@@ -118,9 +118,9 @@ class ProductController extends Controller
     /**
      * 取得所有分類
      */
-    public function getAllCategory($sup_no)
+    public function getAllCategory($sup_no, $cno1=null ,$cno2=null)
     {
-        $category_member = \App\CategoryMember::getAllCategoryMember($sup_no);
+        $category_member = \App\CategoryMember::getAllCategoryMember($sup_no, $cno1, $cno2);
 
         return $category_member;
 
