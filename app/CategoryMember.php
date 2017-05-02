@@ -45,21 +45,55 @@ class CategoryMember extends Model
 
         $query = self::getCategoryMember($sup_no, 1); //取第1層分類
 
-        //預設只取到第一層分類，故第二、三層為 null
+        //取第一層分類數量
+        for($i=0;$i<count($query);$i++)
+        {
+            $class_no = $query[$i]->c_no_1;
+            $count = \App\Product::getProductsCount(1, $class_no);
+
+            //設定分類階層物件該項目的 count
+            $query[$i]->count = $count;
+        }
+
+        //預設只取到第一層分類，故第二、三層指定預設值為 null
         $query2 = null;
         $query3 = null;
+
+        //echo count($query)."<br>";
 
         //取第二層分類
         if(!empty($cno1)) {
             $query2 = self::getCategoryMember($sup_no, 2, $cno1);
+
+            //取第2層分類數量
+            //dd($query2);
+            for($i=0;$i<count($query2);$i++)
+            {
+                $class_no2 = $query2[$i]->c_no_2;   //取Level2目前分類id
+                $count = \App\Product::getProductsCount(2, $cno1, $class_no2);
+
+                //設定分類階層物件該項目的 count
+                $query2[$i]->count = $count;
+            }
         }
 
         //取第三層分類
         if(!empty($cno2)) {
-            $query3 = self::getCategoryMember($sup_no, 3, $cno2);
+            $query3 = self::getCategoryMember($sup_no, 3, $cno1, $cno2);
+
+            //取第2層分類數量
+            for($i=0;$i<count($query3);$i++)
+            {
+                $class_no3 = $query3[$i]->c_no_3;   //取Level3目前分類id
+                $count = \App\Product::getProductsCount(3, $cno1, $cno2, $class_no3);
+
+                //設定分類階層物件該項目的 count
+                $query3[$i]->count = $count;
+            }
         }
 
-        //@TODO: 暫時先這樣，以後再改更佳方式 = =
+
+        //@TODO: need to be refactor = =
         return array($query, $query2, $query3);
     }
 
@@ -87,13 +121,13 @@ class CategoryMember extends Model
 
         //驗證參數，檢查提供的上層ID陣列的元素數量，與階層深度的關係是否正確
         //if (! self::checkParams($depth, $parents) ) return false;
-
         $query = self::where(self::FIELD_SUP_NO, $sup_no)
             ->where(self::FIELD_CLASS_DEPTH, $depth)        //取指定階層深度（1, 2, 3）的分類
-
+            
             //判斷取Level2 or Level3 分類
             ->where(function($query) use ($cno1, $cno2) {
-                ($cno1 != null) and $query->where(self::FIELD_CLASS_LEVEL_1, $cno1); //取Level2
+                ($cno1 != null) AND $query->where(self::FIELD_CLASS_LEVEL_1, $cno1); //取Level2
+                ($cno2 != null) AND $query->where(self::FIELD_CLASS_LEVEL_2, $cno2); //取Level3
             })
 
             //->orderBy(self::FIELD_CLASS_LEVEL_1, 'ASC')   //@TODO: 排序欄位，會依照階層不同異動？ 應該是 自身為階層幾，就要用階層幾的ID排序

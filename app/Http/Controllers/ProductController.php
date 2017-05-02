@@ -66,7 +66,7 @@ class ProductController extends Controller
         //取所有階層分類
         $categories = $this->getAllCategory($sup_no, $class_no, $class_no2);
 
-        //取第一層分類數量
+/*        //取第一層分類數量
         for($i=0;$i<count($categories);$i++)
         {
             $class_no = $categories[0][$i]->c_no_1;
@@ -76,6 +76,7 @@ class ProductController extends Controller
             $categories[0][$i]->count = $count;
         }
         //@TODO: 取第二、三階層分類數量
+*/
 
         return [$products, $categories];
     }
@@ -114,7 +115,6 @@ class ProductController extends Controller
     public function getAllCategory($sup_no, $cno1=null ,$cno2=null)
     {
         $category_member = \App\CategoryMember::getAllCategoryMember($sup_no, $cno1, $cno2);
-
         return $category_member;
 
     }

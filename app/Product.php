@@ -63,12 +63,12 @@ class Product extends Model
      * @int $level      階層(1,2,3)，如不指定預設值為1
      * @int $class_no   分類ID，如不指定預設值為 null 表示查詢所有分類dm 總數量
      */
-    public static function getProductsCount($level=1, $class_no=null)
+    public static function getProductsCount($level=1, $class_no=null, $class_no2=null, $class_no3=null)
     {
-        $query = self::where(function($query) use ($class_no, $level) {
-                ($level == 1) and $query->where(self::FIELD_CLASS_MC1, $class_no);   //第1層取 mc1
-                ($level == 2) and $query->where(self::FIELD_CLASS_MC2, $class_no);   //第2層取 mc2
-                ($level == 3) and $query->where(self::FIELD_CLASS_MC3, $class_no);   //第3層取 mc3
+        $query = self::where(function($query) use ($class_no, $level, $class_no2, $class_no3) {
+                ($level >= 1) and $query->where(self::FIELD_CLASS_MC1, $class_no);    //第1層取 mc1
+                ($level >= 2) and $query->where(self::FIELD_CLASS_MC2, $class_no2);   //第2層取 mc2
+                ($level >= 3) and $query->where(self::FIELD_CLASS_MC3, $class_no3);   //第3層取 mc3
 
             })
             ->count();
