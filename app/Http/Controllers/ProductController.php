@@ -33,24 +33,8 @@ class ProductController extends Controller
      */
     public function showProductsList($class_no = null, $class_no2=null)
     {
-
-        $sup_no = \App\Lib\Common::getSupplierNo();
-        //取得所有產品清單
-        $products = \App\Product::getAllProducts($sup_no, $class_no, $this->offset);
-        
-        //取所有階層分類
-        $categories = $this->getAllCategory($sup_no, $class_no, $class_no2);
-    
-        for($i=0;$i<count($categories);$i++)
-        {
-            $class_no = $categories[$i]->c_no_1;
-            $count = \App\Product::getProductsCount(1, $class_no);      //取第一層分類數量
-
-            //設定分類階層物件該項目的 count
-            $categories[$i]->count = $count;
-        }
-
-        //取所有階層數量
+        //取 products 與 categories
+        list($products, $categories) = $this->getProductsAndCategories($class_no, $class_no2);
 
         return view('demo/product_list', ["products"=>$products, "categories"=>$categories]);
     }
@@ -63,29 +47,38 @@ class ProductController extends Controller
      */
     public function showProductsList2($class_no = null, $class_no2=null)
     {
-
-        $sup_no = \App\Lib\Common::getSupplierNo();
-        //取得所有產品清單 (img)
-        $products = \App\Product::getAllProducts($sup_no, $class_no, $this->offset);
-        
-        //取所有階層分類
-        $categories = $this->getAllCategory($sup_no, $class_no, $class_no2);
-    
-        for($i=0;$i<count($categories);$i++)
-        {
-            $class_no = $categories[$i]->c_no_1;
-            $count = \App\Product::getProductsCount(1, $class_no);      //取第一層分類數量
-
-            //設定分類階層物件該項目的 count
-            $categories[$i]->count = $count;
-        }
-
-        //取所有階層數量
+        //取 products 與 categories
+        list($products, $categories) = $this->getProductsAndCategories($class_no, $class_no2);
 
         return view('demo/products', ["products"=>$products, "categories"=>$categories]);
     }
 
+    /**
+     * 取 products 與 categories
+     *
+     */
+    public function getProductsAndCategories($class_no = null, $class_no2=null)
+    {
+        $sup_no = \App\Lib\Common::getSupplierNo();
+        //取得所有pd ls
+        $products = \App\Product::getAllProducts($sup_no, $class_no, $this->offset);
 
+        //取所有階層分類
+        $categories = $this->getAllCategory($sup_no, $class_no, $class_no2);
+
+        //取第一層分類數量
+        for($i=0;$i<count($categories);$i++)
+        {
+            $class_no = $categories[0][$i]->c_no_1;
+            $count = \App\Product::getProductsCount(1, $class_no);
+
+            //設定分類階層物件該項目的 count
+            $categories[0][$i]->count = $count;
+        }
+        //@TODO: 取第二、三階層分類數量
+
+        return [$products, $categories];
+    }
 
     /**
      * 取得單一 product 詳細資料

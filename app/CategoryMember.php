@@ -44,16 +44,23 @@ class CategoryMember extends Model
         //if (! self::checkParams($depth, $parents) ) return false;
 
         $query = self::getCategoryMember($sup_no, 1); //取第1層分類
-        //dd($query);
-        //exit;
+
+        //預設只取到第一層分類，故第二、三層為 null
+        $query2 = null;
+        $query3 = null;
+
+        //取第二層分類
         if(!empty($cno1)) {
             $query2 = self::getCategoryMember($sup_no, 2, $cno1);
+        }
 
-        } 
-        //@TODO:取第2層分類
-        //$query = self::getCategoryMember($sup_no, 3); //取第3層分類
+        //取第三層分類
+        if(!empty($cno2)) {
+            $query3 = self::getCategoryMember($sup_no, 3, $cno2);
+        }
 
-        return $query;
+        //@TODO: 暫時先這樣，以後再改更佳方式 = =
+        return array($query, $query2, $query3);
     }
 
     /**
