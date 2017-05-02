@@ -25,16 +25,27 @@
         @foreach($categories[0] as $category)
             <!--分類名稱和該分類項目的數量-->
                 <li><a href="/category/{{$category->c_no_1}}">{{$category->name}}</a> <span style="color:blue;">({{$category->count or '???'}})</span>
-                    <!--第二層分類，如果有則需要顯示-->
+                    <!--第二層分類，如果有則顯示-->
                     @if(!empty($categories[1]) AND $category->c_no_1 == $categories[1][0]->c_no_1)
                         <ul class="side">
                             @foreach($categories[1] as $category_lv2)
                                 <li>{{$category_lv2->name}}</li>
+                                <!--第三層分類，如果有則顯示-->
+                                @if(!empty($categories[2]) AND $category_lv2->c_no_2 == $categories[2][0]->c_no_2)
+                                    <ul class="side">
+                                        @foreach($categories[2] as $category_lv3)
+                                            <li>{{$category_lv3->name}}</li>
+
+                                        @endforeach
+                                    </ul>
+
+                                @endif
+                                <!--category lv2-->
                             @endforeach
                         </ul>
 
                     @endif
-                <!---->
+                    <!--category lv2-->
                 </li>
             @endforeach
         </ul>
