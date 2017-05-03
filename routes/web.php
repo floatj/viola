@@ -41,7 +41,7 @@ Route::get('/'.$custom_path.'/products/', 'ProductController@showProductsList2')
 //dm-by-CategoryMember
 Route::get('/'.$custom_path.'/category/{class_no?}', 'ProductController@showProductsList');
 Route::get('/category/{class_no?}', 'ProductController@showProductsList');
-
+Route::get('/category/{class_no?}/{class_no2?}', 'ProductController@showProductsList');
 //---
 
 //dm-product-page
