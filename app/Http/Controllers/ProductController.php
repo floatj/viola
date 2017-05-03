@@ -31,10 +31,10 @@ class ProductController extends Controller
      * 參數：$class_no = 分類 ID, 若未指定則預設值為 0 表示不分類
      *
      */
-    public function showProductsList($class_no = null, $class_no2=null)
+    public function showProductsList($class_no = null, $class_no2=null, $class_no3=null)
     {
         //取 products 與 categories
-        list($products, $categories) = $this->getProductsAndCategories($class_no, $class_no2);
+        list($products, $categories) = $this->getProductsAndCategories($class_no, $class_no2, $class_no3);
 
         return view('demo/product_list', ["products"=>$products, "categories"=>$categories]);
     }
@@ -45,10 +45,10 @@ class ProductController extends Controller
      * 參數：$class_no = 分類 ID, 若未指定則預設值為 0 表示不分類
      *
      */
-    public function showProductsList2($class_no = null, $class_no2=null)
+    public function showProductsList2($class_no = null, $class_no2=null, $class_no3=null)
     {
         //取 products 與 categories
-        list($products, $categories) = $this->getProductsAndCategories($class_no, $class_no2);
+        list($products, $categories) = $this->getProductsAndCategories($class_no, $class_no2, $class_no3);
 
         return view('demo/products', ["products"=>$products, "categories"=>$categories]);
     }
@@ -57,11 +57,12 @@ class ProductController extends Controller
      * 取 products 與 categories
      *
      */
-    public function getProductsAndCategories($class_no = null, $class_no2=null)
+    public function getProductsAndCategories($class_no = null, $class_no2=null, $class_no3=null)
     {
+
         $sup_no = \App\Lib\Common::getSupplierNo();
-        //取得所有pd ls
-        $products = \App\Product::getAllProducts($sup_no, $class_no, $this->offset);
+        //取得所有products 
+        $products = \App\Product::getAllProducts($sup_no, $this->offset, $class_no, $class_no2, $class_no3);
 
         //取所有階層分類
         $categories = $this->getAllCategory($sup_no, $class_no, $class_no2);

@@ -26,11 +26,14 @@ class Product extends Model
      * @int $sup_no  supplier number for identity
      */
 
-    public static function getAllProducts($sup_no, $c_no = null, $offset = 12)
+    public static function getAllProducts($sup_no, $offset = 12, $c_no1=null, $c_no2=null, $c_no3=null)
     {
+
         $query = self::where(self::FIELD_SUP_NO, $sup_no)
-            ->where(function($query) use ($c_no) {
-                ($c_no != null) and $query->where(self::FIELD_CLASS_MC1, $c_no);     //取指定層數的分類;
+            ->where(function($query) use ($c_no1, $c_no2, $c_no3) {
+                ($c_no1 != null) and $query->where(self::FIELD_CLASS_MC1, $c_no1);     //取分類屬於第1層class_id的product;
+                ($c_no2 != null) and $query->where(self::FIELD_CLASS_MC2, $c_no2);     //取分類屬於第2層class_id的product;
+                ($c_no3 != null) and $query->where(self::FIELD_CLASS_MC3, $c_no3);     //取分類屬於第3層class_id的product;
             })
             ->paginate($offset);     //分頁
             //->get();

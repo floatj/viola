@@ -34,7 +34,7 @@
                                 @if(!empty($categories[2][0]) AND $category_lv2->c_no_2 == $categories[2][0]->c_no_2)
                                     <ul class="side">
                                         @foreach($categories[2] as $category_lv3)
-                                            <li>{{$category_lv3->name}} <span style="color:blue;">({{$category_lv3->count or '???'}})</span></li>
+                                            <li><a href="/category/{{$category_lv3->c_no_1}}/{{$category_lv3->c_no_2}}/{{$category_lv3->c_no_3}}">{{$category_lv3->name}}</a> <span style="color:blue;">({{$category_lv3->count or '???'}})</span></li>
 
                                         @endforeach
                                     </ul>
