@@ -25,7 +25,15 @@
                 <li><a href="{{action('ContactController@showContactPage')}}">con連接t</a></li>
                 <li><a href="{{action('ContactController@showMapPage')}}">map連接t</a></li>
             </ul>
-
+            <!--right side-->
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜尋</button>
+                </form>
+            </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>

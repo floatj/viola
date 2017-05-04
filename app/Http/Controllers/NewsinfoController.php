@@ -10,7 +10,7 @@ class NewsinfoController extends Controller
 {
     //
     /**
-     * 取得預設 supplier 的 newsinfo
+     * 取得預設 supplier 的 全部 newsinfod
      */
 
     public function showAllNewsinfo()
@@ -19,6 +19,26 @@ class NewsinfoController extends Controller
 
         $newsinfo = \App\Newsinfo::getAllNewsinfo($sup_no);
 
-        return view('demo/news', ["newsinfo"=>$newsinfo]);
+        return view('demo/news_list', ["newsinfo"=>$newsinfo]);
     }
+
+    /**
+     * 依 recno 取得特定的 newsinfo 內容
+     */
+
+    public function showNewsinfo($recno)
+    {
+        $sup_no = \App\Lib\Common::getSupplierNo();
+
+        $news = \App\Newsinfo::getNewsinfo($recno);
+
+        $news_ret = $news[0];
+
+        return view('demo/news', ["news"=>$news_ret]);
+
+        // 顯示
+
+
+    }
+
 }

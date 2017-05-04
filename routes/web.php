@@ -53,6 +53,11 @@ Route::get('/product/{recno}', 'ProductController@showProduct');
 
 //newsinfo
 Route::get('/'.$custom_path.'/news/', 'NewsinfoController@showAllNewsinfo');
+Route::get('/news/', 'NewsinfoController@showAllNewsinfo');
+
+//newsinfo by recno
+Route::get('/news/{recno}', 'NewsinfoController@showNewsinfo');
+
 
 //custompage
 Route::get('/'.$custom_path.'/custom1/', 'CustomController@showCustomPage');

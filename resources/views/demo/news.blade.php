@@ -3,28 +3,28 @@
 
 @section('content')
 
-    <h1>N信件分類info-測試blalalaa</h1>
-
+    <!--news info from db-->
+    <h2>table:</h2>
     <table class="table table-striped table-hover">
         <thead>
         <tr>
-            <th>[P-key] recno</th>
-            <th>a_name</th>
-            <th>a_text</th>
-            <th>a_time</th>
+            <th>column name</th>
+            <th>value</th>
+            <th>txt</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($newsinfo as $news)
             <tr>
                 <td>{{$news->recno}}</td>
                 <td>{{$news->a_name}}</td>
-                <td>{{$news->a_time}}</td>
                 <td>{{$news->a_text}}</td>
+
             </tr>
-        @endforeach
+            <tr>
+            </tr>
         </tbody>
     </table>
 
-
+    <br/>
+    <a href="/news">back</a>
 @stop
