@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 
 /* Demo */
+//$custom_path="demo";
 $custom_path="demo";
 
 //首頁

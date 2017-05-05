@@ -1,0 +1,355 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+	padding-top: 0px;
+	background-color:#000;
+    }
+	   
+.navbar-brand{
+	padding:5px 5px;    
+    }
+.navbar-brand img{
+	height:60px;   
+    }  
+			
+.footer{
+	width: 100%;
+    height:120px;
+	background: url(../img/foot_bg.png) repeat-x;
+	}
+			
+.footer p {
+    color:#fff;
+    font-size:13px;
+    text-align:center;
+    padding-top: 30px;   
+    }
+			
+.footer p a {
+    color:#fff;
+	text-decoration:none;
+    }
+
+.searchBox{
+	margin-top:10px;
+	}
+	
+#hotprod{
+	margin-bottom:20px;
+	}
+#hotprod img{
+	margin-bottom:20px;
+	}
+#hotprod p{
+	font-family:微軟正黑體;
+	font-size:16px;
+	color:#666;
+	font-weight:bold;
+	text-align:center;
+	}	
+	
+#about{
+	margin-bottom:20px;
+	padding:10px;
+	}
+	
+#about p{
+	color:#fff;
+    font-size:16px;
+	}
+
+.page-header h1{
+	font-size:24px;
+	color:#fff;
+	}
+	
+	
+
+
+/* pro */
+
+#products{
+	margin-bottom:20px;
+	}
+#products img{
+	margin-bottom:10px;
+	}
+
+＃pro_menu ul{
+	color:#fff;
+    font-size:20px;
+	}
+＃pro_menu ul li a{
+	color:#fff;
+    font-size:16px;
+	text-decoration:none;
+	}
+	
+.phh{
+	color:#999;
+    font-size:16px;
+	}	
+.pmm a{
+	color:#fff;
+    font-size:18px;
+	text-decoration:none;
+	}	
+	
+#prodbox{
+	margin-bottom:20px;
+	}
+#prodbox a p{
+	font-family:微軟正黑體;
+	font-size:16px;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+	}
+#prodbox a:hover p{
+	color:#52b743;
+	text-decoration:none;
+	}
+	
+#pro_pic{
+	margin:0px 0 20px 0;
+	}
+		
+#pro_h1{
+	font-size:24px;
+	color:#fff;
+	margin:0px 0 10px 0;
+	}
+	
+#pro_h2{
+	font-size:18px;
+	color:#fff;
+	margin:5px 0 20px 0;
+	border-bottom:1px #b0b0b0 solid;
+	padding-bottom:20px;
+	}
+
+#pro_h3{
+	font-size:16px;
+	color:#fff;
+	margin:5px 0 10px 0;
+	padding-left:35px;
+	background:url(../img/i_see.png) no-repeat left -4px;
+	}
+
+#pro_h4{
+	font-size:24px;
+	color:#fff;
+	margin:5px 0 20px 0;
+	}
+	
+#pro_format{
+	width:50%;
+	font-size:18px;
+	border:1px #bfbfbf solid;
+	border-radius:4px;
+	padding:10px 20px 10px 20px;
+	margin-bottom:30px;
+	}
+
+
+	
+#pro_ask{
+	text-align:right;
+	margin:10px 0 50px 0;
+	}
+			
+#pro_price{
+	text-align:right;
+	font-size:28px;
+	color:#000;
+	line-height:30px;
+	padding-top:20px;
+	}
+
+#pro_intro{
+	font-size:18px;
+	color:#fff;
+	line-height:30px;
+	}
+
+＃pro_btn{
+	text-align:center;
+	margin:10px 0 50px 0;
+	}
+
+#pro_title{
+	color:#fff;
+	font-size:18px;
+	margin-bottom:20px;
+	}
+	
+	
+
+/* Newsroom */
+
+#news{
+	margin-bottom:30px;
+	padding:10px 20px;
+	}
+		
+#news_list{
+	margin-bottom:20px;
+	padding-bottom:20px;
+	border-bottom:1px #ddd dotted;
+	}
+	
+#news_date{
+	font-size:16px;
+	color:#999;
+	}
+
+#news_title a{
+	font-size:18px;
+	color:#52b743;
+	text-decoration:none;
+	}
+	
+#news_detail{
+	color:#333;
+	margin:0px 0px 50px -10px;
+	}
+	
+#news_dtitle{
+	font-size:18px;
+	color:#52b743;
+	margin:20px 0 5px 0;
+	}
+	
+#news_ddate{
+	font-size:12px;
+	color:#999;
+	margin:0px 0 0px 0;
+	}
+	
+#news_content{
+	margin:30px 0 30px 0;
+	}
+#news_content p{
+	font-size:16px;
+	color:#fff;
+	line-height:30px;
+	}
+			
+#news_pic{
+	margin:30px 0 30px 0;
+	}
+		
+#news_link{
+	float:left;
+	margin:10px 0 10px 0;
+	}
+	
+#news_btn{
+	text-align:center;
+	margin:10px 0 50px 0;
+	}
+
+
+/* contact */
+	
+#contact{
+	margin-bottom:20px;
+	padding:10px;
+	}
+	
+#con_list{
+	color:#fff;
+	margin-bottom:10px;
+	}
+		
+.con_input{
+	width:99%;
+	height:30px;
+	}
+	
+.con_inputs{
+	width:40%;
+	height:30px;
+	}
+	
+#con_btn{
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:50px;
+	}
+		
+a.btn_gray{
+	font-size:18px;
+	color:#fff;
+	padding:4px 10px 6px 10px;
+	border-radius:5px;
+	background-color:#303030;
+	text-decoration:none;
+	}	
+a:hover.btn_gray{
+	color:#ddd;
+	background-color:#303030;
+	}		
+
+
+#map{
+	margin-bottom:20px;
+	text-align:center;
+	}
+#map img{
+	margin-bottom:20px;
+	margin:0 auto;
+	}
+	
+#spec_nav{
+	color:#999;
+	font-size:16px;
+	text-align:right;
+	padding-right:20px;
+	margin-bottom:20px;
+	}	
+	
+#spec_nav a{
+	color:#999;
+	font-size:16px;
+	text-decoration:none;
+	margin:0 10px;
+	}
+	
+#spec_nav a:hover{
+	color:#fff;
+	text-decoration:none;
+	}
+	
+		
+@media (max-width: 480px) {
+	
+body {
+	padding-top: 50px;
+	background-color:#000;
+    }
+		
+.navbar-brand{
+	padding:5px 5px;    
+    }
+.navbar-brand img{
+	height:40px;   
+    }  
+	
+.navbar-nav li{
+	text-align:center;
+	}
+	
+	
+	
+	}
+
+
+
+
+
