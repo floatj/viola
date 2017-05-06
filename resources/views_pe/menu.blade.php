@@ -13,16 +13,16 @@
         <div id="navbar" class="navbar-collapse collapse" style="padding:10px 0;">
 
           <ul class="navbar-nav navbar-right nav">
-            <li><a href="index.php">首頁</a></li>
-            <li><a href="about.php">公司簡介</a></li>
-            <li><a href="news.php">最新消息</a></li>
-            <li><a href="products.php">產品型錄</a></li>
-            <li><a href="spec.php">產品規格表</a></li>
-            <li><a href="plastic.php">認識塑膠</a></li>
-            <li><a href="map.php">交通指引</a></li>
-            <li><a href="contact.php">聯絡我們</a></li>
+            <li><a href="/">首頁</a></li>
+            <li><a href="/about">公司簡介</a></li>
+            <li><a href="/news">最新消息</a></li>
+            <li><a href="/products">產品型錄</a></li>
+            <li><a href="/spec">產品規格表</a></li>
+            <li><a href="/plastic">認識塑膠</a></li>
+            <li><a href="/map">交通指引</a></li>
+            <li><a href="/contact">聯絡我們</a></li>
             <li><div class="searchBox"><!-- searchBox -->
-                	<div class="inputBox"><input type="text" id="keyword" placeholder="請輸入產品關鍵字..."><a class="btn_submit" onclick="if($('#keyword').val()==''){ alert('請輸入關鍵字');}else{location.href=encodeURI('../product/index.php?keyword=' + $('#keyword').val());}"><img src="img/i_search.png" alt=""/></a></div>
+                	<div class="inputBox"><input type="text" id="keyword" placeholder="請輸入產品關鍵字..."><a class="btn_submit" onclick="if($('#keyword').val()==''){ alert('請輸入關鍵字');}else{location.href=encodeURI('../products?keyword=' + $('#keyword').val());}"><img src="img/i_search.png" alt=""/></a></div>
                     <div class="btn" onClick="$(this).prev().slideToggle(200);"><a></a></div>
                 </div><!-- searchBox end -->
 				

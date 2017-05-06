@@ -26,10 +26,11 @@ $custom_path="demo";
 
 //首頁
 Route::get('/', 'SupplierController@showInfo');
+Route::get('/about', 'SupplierController@showInfo');
 
 //---
 
-//sup info
+//公司介紹
 Route::get('/'.$custom_path.'/', 'SupplierController@showInfo');
 
 //---
@@ -52,7 +53,8 @@ Route::get('/product/{recno}', 'ProductController@showProduct');
 
 //---
 
-//newsinfo
+//最新消息
+Route::get('/news', 'NewsinfoController@showAllNewsinfo');
 Route::get('/'.$custom_path.'/news/', 'NewsinfoController@showAllNewsinfo');
 
 //custompage

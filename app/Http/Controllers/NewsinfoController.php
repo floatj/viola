@@ -19,6 +19,6 @@ class NewsinfoController extends Controller
 
         $newsinfo = \App\Newsinfo::getAllNewsinfo($sup_no);
 
-        return view('demo/news', ["newsinfo"=>$newsinfo]);
+        return view('news', ["newsinfo"=>$newsinfo]);
     }
 }
