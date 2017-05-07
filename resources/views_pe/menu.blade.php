@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="img/logo.png" class="img-responsive"></a></div>
+          <a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}" class="img-responsive"></a></div>
         
                         
         <div id="navbar" class="navbar-collapse collapse" style="padding:10px 0;">
@@ -44,17 +44,17 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="img/ad01.jpg" alt="最新商品圖">
+      <img src="{{ asset('img/ad01.jpg') }}" alt="最新商品圖">
       <div class="carousel-caption">
       </div>
     </div>
     <div class="item">
-      <img src="img/ad02.jpg" alt="最新商品圖">
+      <img src="{{ asset('img/ad02.jpg') }}" alt="最新商品圖">
       <div class="carousel-caption">
       </div>
     </div>
     <div class="item">
-      <img src="img/ad03.jpg" alt="最新商品圖">
+      <img src="{{ asset('img/ad03.jpg') }}" alt="最新商品圖">
       <div class="carousel-caption">
       </div>
     </div>

@@ -50,7 +50,14 @@ class ProductController extends Controller
         //取 products 與 categories
         list($products, $categories) = $this->getProductsAndCategories($class_no, $class_no2, $class_no3);
 
-        return view('demo/products', ["products"=>$products, "categories"=>$categories]);
+        //取得 image 路徑
+        foreach($products as $key=>$product) {
+            $products[$key]->image_path = $this->getProductImage($product->recno, "_min");
+        }
+
+        //dd($products);
+
+        return view('products', ["products"=>$products, "categories"=>$categories]);
     }
 
     /**
@@ -90,9 +97,9 @@ class ProductController extends Controller
         //$sup_no = \App\Lib\Common::getSupplierNo();
 
         $product = \App\Product:: getProduct($recno);   //取得 product 資料
-        $image_path = $this->getProductImage($recno);   //取得 image 路徑
+        $image_path = $this->getProductImage($recno, "_real");   //取得 image 路徑
 
-        return view('demo/product', ["product"=>$product, "image_path"=>$image_path]);
+        return view('product', ["product"=>$product, "image_path"=>$image_path]);
     }
 
     /**
@@ -101,13 +108,14 @@ class ProductController extends Controller
      * @param $recno
      * @return string
      */
-    public function getProductImage($recno)
+    public function getProductImage($recno, $prefix="")
     {
-        $host = \Config::get('viola.dm_image_path');
+        $host = \Config::get('viola.dm_image_path'.$prefix);
+        //$host = \Config::get('viola.dm_image_path_min');
         $image_path = $recno;
         $ext = ".jpg";
 
-        return "$host"."/"."$image_path".$ext;
+        return "http://".$host."/"."$image_path".$ext;
     }
 
     /**

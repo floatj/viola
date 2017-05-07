@@ -1,4 +1,5 @@
 @extends('layout')
+
 @section('page')
   <div class="page-header">
          <h1>公司  簡介<small></small></h1>
