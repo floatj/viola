@@ -63,10 +63,11 @@ Route::get('/product/{recno}', 'ProductController@showProduct');
 
 //最新消息
 Route::get('/news', 'NewsinfoController@showAllNewsinfo');
+Route::get('/news/{recno?}', 'NewsinfoController@showNews');
 Route::get('/'.$custom_path.'/news/', 'NewsinfoController@showAllNewsinfo');
 
 //認識塑膠
-//@todo 先寫死，以後再修改
+//@todo 這些路由暫時先寫死，以後再修改 = =
 Route::get('/plastic', 'CustomController@showCustomPage1');
 //產品規格表
 Route::get('/spec', 'CustomController@showCustomPage2');

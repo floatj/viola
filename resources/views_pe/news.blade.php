@@ -9,7 +9,7 @@
         <div id="news_list" class="row">
             @foreach($newsinfo as $news)
                 <div id="news_date" class="col-lg-2 col-xs-12">{{$news->a_time}}</div>
-                <div id="news_title" class="col-lg-10 col-xs-12"><a href="news_d.php">{{$news->a_name}}</a></div>
+                <div id="news_title" class="col-lg-10 col-xs-12"><a href="/news/{{$news->recno}}">{{$news->a_name}}</a></div>
             @endforeach
         </div>
 
