@@ -10,7 +10,12 @@
             <div id="news_ddate" class="col-md-12">發佈時間：{{$news->a_time}}</div>
             <div id="news_dtitle" class="col-md-12">{{$news->a_name}}</div>
             <div id="news_content" class="col-md-12">123123<p>{!! $news->a_text !!}</p></div>
-            <div id="news_pic" class="col-md-12"><img src="img/news_pic.jpg" class="img-responsive" alt=""/></div>
+            @if(!empty($image[0]))
+            <div id="news_pic" class="col-md-12"><img src="{{$image[0]}}" class="img-responsive" alt=""/></div>
+            @endif
+            @if(!empty($image[1]))
+            <div id="news_pic" class="col-md-12"><img src="{{$image[1]}}" class="img-responsive" alt=""/></div>
+            @endif
       
       
     </div>
