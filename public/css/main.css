@@ -262,21 +262,22 @@ body {
 	padding:10px;
 	}
 	
-#con_list{
-	color:#fff;
+.con_list{
+	color: #ffffff;
 	margin-bottom:10px;
-	}
+}
+
 		
 .con_input{
 	width:99%;
 	height:30px;
-	}
-	
-.con_inputs{
-	width:40%;
-	height:30px;
-	}
-	
+	color:#000;
+}
+
+.con_textarea{
+	color:#000;
+}
+
 #con_btn{
 	text-align:center;
 	margin-top:10px;
@@ -286,11 +287,14 @@ body {
 a.btn_gray{
 	font-size:18px;
 	color:#fff;
-	padding:4px 10px 6px 10px;
+	/*padding:4px 10px 6px 10px;*/
+	/* UX tuning:make the button much bigger, */
+	padding:6px 12px 8px 12px;
+	margin:6px;
 	border-radius:5px;
 	background-color:#303030;
 	text-decoration:none;
-	}	
+	}
 a:hover.btn_gray{
 	color:#ddd;
 	background-color:#303030;
@@ -350,6 +354,53 @@ body {
 	}
 
 
+/* 客戶聯絡頁面 自訂訊息css */
 
+/*標題樣式字15級*/
+.a16_01 {
+	font-size: 16px;
+	color: #000000;
+	line-height: 25px;
+	font-weight: 700;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #333333;
+}
+.a16_02 {font-size: 16px;color: #ff6600;line-height: 25px;}
+.a16_03 {font-size: 16px;color: #006699;line-height: 25px;font-weight: 700;}
+.a16_04 {font-size: 16px;color: #336600;line-height: 25px;}
+.a16_05 {font-size: 16px;color: #ff0066;line-height: 25px;}
+.a16_06 {font-size: 16px;color: #333333;line-height: 25px;}
+.a16_07 {
+	font-size: 16px;
+	color: #006699;
+	line-height: 25px;
+	font-weight: 700;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+}
+.a16_08 {
+	font-size: 16px;
+	color: #333333;
+	line-height: 25px;
+	font-weight: 700;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+}
 
+/*關閉的link button*/
+a.btn_disabled{
+	pointer-events: none;
+	cursor: not-allowed;
+	color: #5e5e5e;
+}
 
+a:hover.btn_disabled{
+	pointer-events: none;
+	cursor: not-allowed;
+	color: #9e9e9e;
+}
+
+#admin_link {color:#8c8c8c}

@@ -22,7 +22,12 @@
             <li><a href="/map">交通指引</a></li>
             <li><a href="/contact">聯絡我們</a></li>
             <li><div class="searchBox"><!-- searchBox -->
-                	<div class="inputBox"><input type="text" id="keyword" placeholder="請輸入產品關鍵字..."><a class="btn_submit" onclick="if($('#keyword').val()==''){ alert('請輸入關鍵字');}else{location.href=encodeURI('../products?keyword=' + $('#keyword').val());}"><img src="img/i_search.png" alt=""/></a></div>
+                	<div class="inputBox">
+                      <input type="text" id="keyword" placeholder="請輸入產品關鍵字...">
+                      <a class="btn_submit" onclick="if($('#keyword').val()==''){ alert('請輸入關鍵字');}else{location.href=encodeURI('../products?keyword=' + $('#keyword').val());}">
+                        <img src="{{asset('img/i_search.png')}}" alt=""/>
+                      </a>
+                    </div>
                     <div class="btn" onClick="$(this).prev().slideToggle(200);"><a></a></div>
                 </div><!-- searchBox end -->
 				

@@ -31,7 +31,9 @@ class RouteServiceProvider extends ServiceProvider
         Route::pattern('class_no3', '[0-9]+');
 
         //限制最新消息路由的參數必須為數字
+        //限制詢問產品路由的參數必須為數字
         Route::pattern('recno', '[0-9]+');
+
 
         parent::boot();
     }

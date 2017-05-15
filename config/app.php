@@ -25,7 +25,9 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    //'env' => env('APP_ENV', 'production'),        //正式環境
+    //'env' => env('APP_ENV', 'staging'),           //測試環境
+    'env' => env('APP_ENV', 'development'),         //開發環境
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +66,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Taipei',
+
 
     /*
     |--------------------------------------------------------------------------

@@ -56,15 +56,19 @@ Route::get('/category/{class_no?}/{class_no2?}/{class_no3?}', 'ProductController
 //---
 
 //dm-product-page
-Route::get('/'.$custom_path.'/product/{recno}', 'ProductController@showProduct');
+//Route::get('/'.$custom_path.'/product/{recno}', 'ProductController@showProduct');
 Route::get('/product/{recno}', 'ProductController@showProduct');
+
+//詢問產品
+Route::get('/inquiry/{recno}', 'ProductController@inquiryProduct');
+Route::post('/inquiry/', 'ProductController@inquiryProductSubmit');
 
 //---
 
 //最新消息
 Route::get('/news', 'NewsinfoController@showAllNewsinfo');
 Route::get('/news/{recno?}', 'NewsinfoController@showNews');
-Route::get('/'.$custom_path.'/news/', 'NewsinfoController@showAllNewsinfo');
+//Route::get('/'.$custom_path.'/news/', 'NewsinfoController@showAllNewsinfo');
 
 //認識塑膠
 //@todo 這些路由暫時先寫死，以後再修改 = =
@@ -78,9 +82,10 @@ Route::get('/map', 'MapController@showMap');
 //custompage
 //Route::get('/'.$custom_path.'/custom1/', 'CustomController@showCustomPage');
 
-//contact
-Route::get('/'.$custom_path.'/contact/', 'ContactController@showContactPage');
+//聯絡我們
+//Route::get('/'.$custom_path.'/contact/', 'ContactController@showContactPage');
 Route::get('/contact/', 'ContactController@showContactPage');
+Route::post('/contact/', 'ContactController@contactSubmit');
 
 //map
 Route::get('/'.$custom_path.'/map/', 'ContactController@showMapPage');

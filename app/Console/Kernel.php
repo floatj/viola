@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        //註冊 Commands
+        Commands\TestMail::class
     ];
 
     /**

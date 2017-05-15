@@ -25,7 +25,7 @@
              
              <div id="pro_h2">最 少 訂 購 量 : {{$product->morder}}</div>
              
-             <div id="pro_ask"><a href="/products_charge" class="btn_gray">詢問產品</a></div>
+             <div id="pro_ask"><a href="/inquiry/{{$product->recno}}" class="btn_gray">詢問產品</a></div>
 
            </div>
     

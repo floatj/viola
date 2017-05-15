@@ -20,5 +20,5 @@
       
     </div>
     
-    <div id="news_btn" class="row"><a href="news.php" class="btn_gray">Back</a></div>
+    <div id="news_btn" class="row"><a href="/news" class="btn_gray">Back</a></div>
 @stop
