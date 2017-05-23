@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //註冊 Commands
-        Commands\TestMail::class	//寄信
+        Commands\TestMail::class,	//寄信
         Commands\CheckSystem::class     //檢查系統
     ];
 
