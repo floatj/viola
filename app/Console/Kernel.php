@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        Commands\CheckSystem::class     //檢查系統
     ];
 
     /**
