@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Lib\Common;
 
 class Product extends Model
 {
@@ -68,7 +69,13 @@ class Product extends Model
      */
     public static function getProductsCount($level=1, $class_no=null, $class_no2=null, $class_no3=null)
     {
-        $query = self::where(function($query) use ($class_no, $level, $class_no2, $class_no3) {
+
+	//取得 sup_no
+  	//TOSO: temportary fix, need to improve
+        $sup_no = \App\Lib\Common::getSupplierNo();    
+
+        $query = self::where(self::FIELD_SUP_NO, $sup_no)
+                 ->where(function($query) use ($class_no, $level, $class_no2, $class_no3) {
                 ($level >= 1) and $query->where(self::FIELD_CLASS_MC1, $class_no);    //第1層取 mc1
                 ($level >= 2) and $query->where(self::FIELD_CLASS_MC2, $class_no2);   //第2層取 mc2
                 ($level >= 3) and $query->where(self::FIELD_CLASS_MC3, $class_no3);   //第3層取 mc3
