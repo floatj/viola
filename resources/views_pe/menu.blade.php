@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}" class="img-responsive"></a></div>
+          <a class="navbar-brand" href="/"><img src="{{ asset('img/logo.png') }}" class="img-responsive"></a></div>
         
                         
         <div id="navbar" class="navbar-collapse collapse" style="padding:10px 0;">
@@ -23,8 +23,9 @@
             <li><a href="/contact">聯絡我們</a></li>
             <li><div class="searchBox"><!-- searchBox -->
                 	<div class="inputBox">
-                      <input type="text" id="keyword" placeholder="請輸入產品關鍵字...">
-                      <a class="btn_submit" onclick="if($('#keyword').val()==''){ alert('請輸入關鍵字');}else{location.href=encodeURI('../products?keyword=' + $('#keyword').val());}">
+                      {{-- @TODO: 產品關鍵字搜尋的 javascript 事件處理方法不佳，以後有空要分離出來，不要跟 html 寫在一起... --}}
+                      <input type="text" id="keyword" placeholder="請輸入產品關鍵字..."  onkeypress="if(event.keyCode == 13) {location.href=encodeURI('/products/search/' + $('#keyword').val());}">
+                      <a class="btn_submit" onclick="if($('#keyword').val()==''){ alert('請輸入關鍵字');}else{location.href=encodeURI('/products/search/' + $('#keyword').val());}">
                         <img src="{{asset('img/i_search.png')}}" alt=""/>
                       </a>
                     </div>
