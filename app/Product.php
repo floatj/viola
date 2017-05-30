@@ -20,18 +20,25 @@ class Product extends Model
     const FIELD_CLASS_MC2 = 'mc2';    //分類欄位名稱
     const FIELD_CLASS_MC3 = 'mc3';    //分類欄位名稱
 
+    const FIELD_PRODUCT_NAME = 'pname';   //產品名稱
+
     /**
      *
-     * 取得 DM 頁面顯示所有 Product 資料
+     * 取得 DM 頁面顯示 ( 所有 | 指定關鍵字 ) Product 資料
+     *
+     * 如有帶入 $keyword 關鍵字，則僅顯示產品名稱符合指定關鍵字 (LIKE %product_name%) 的產品
      *
      * @int $sup_no  supplier number for identity
      */
 
-    public static function getAllProducts($sup_no, $offset = 12, $c_no1=null, $c_no2=null, $c_no3=null)
+    public static function getAllProducts($sup_no, $offset = 12, $c_no1=null, $c_no2=null, $c_no3=null, $keyword=null)
     {
 
         $query = self::where(self::FIELD_SUP_NO, $sup_no)
-            ->where(function($query) use ($c_no1, $c_no2, $c_no3) {
+            ->where(function($query) use ($c_no1, $c_no2, $c_no3, $keyword) {
+
+                ($keyword != null) and $query->where(self::FIELD_PRODUCT_NAME, 'LIKE', "%$keyword%");     //如有帶入產品名稱關鍵字，則取名稱符合之產品
+
                 ($c_no1 != null) and $query->where(self::FIELD_CLASS_MC1, $c_no1);     //取分類屬於第1層class_id的product;
                 ($c_no2 != null) and $query->where(self::FIELD_CLASS_MC2, $c_no2);     //取分類屬於第2層class_id的product;
                 ($c_no3 != null) and $query->where(self::FIELD_CLASS_MC3, $c_no3);     //取分類屬於第3層class_id的product;
