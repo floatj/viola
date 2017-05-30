@@ -39,7 +39,10 @@
 <div id="main" class="col-md-9 col-xs-12">
 
   <div class="page-header">
-         <h1>產品型錄<small></small></h1>
+         <h1>產品型錄</h1>
+         @if (!empty($product_keyword))
+             <h1>您搜尋的產品關鍵字為「{{$product_keyword}}」：</h1>
+         @endif
   </div>
 
     <!-- 產品列表共 3 排，一排 4 個產品圖，一頁共 12 個產品 -->

@@ -31,7 +31,8 @@ class ProductController extends Controller
     */
 
     /**
-     * 取得預設 supplier 指定分類的 Products_list 頁面 (list-based) (含分類及 products)
+     * (RWD 版暫無使用)
+     * 取得預設 supplier 指定分類的 Products_list 頁面-以清單顯示 (list-based) (含分類及 products)
      *
      * 參數：$class_no = 分類 ID, 若未指定則預設值為 0 表示不分類
      *
@@ -45,7 +46,7 @@ class ProductController extends Controller
     }
 
     /**
-     * 取得預設 supplier 指定分類的 Products_list 頁面 (img based) (含分類及 products)
+     * 取得預設 supplier 指定分類的 Products_list 頁面-以縮圖顯示 (img based) (含分類及 products)
      *
      * 參數：$class_no = 分類 ID, 若未指定則預設值為 0 表示不分類
      *
@@ -60,21 +61,38 @@ class ProductController extends Controller
             $products[$key]->image_path = $this->getProductImage($product->recno, "_min");
         }
 
-        //dd($products);
-
         return view('products', ["products"=>$products, "categories"=>$categories]);
     }
 
+
     /**
-     * 取 products 與 categories
-     *
+     *  關鍵字搜尋產品
      */
-    public function getProductsAndCategories($class_no = null, $class_no2=null, $class_no3=null)
+    public function searchProduct($product_keyword)
+    {
+        //取 products 與 categories
+        list($products, $categories) = $this->getProductsAndCategories(null, null, null, $product_keyword);
+
+        //取得 image 路徑
+        foreach($products as $key=>$product) {
+            $products[$key]->image_path = $this->getProductImage($product->recno, "_min");
+        }
+
+        return view('products', ["products"=>$products, "categories"=>$categories, "product_keyword"=>$product_keyword]);
+    }
+
+
+    /**
+     * 列舉或搜尋 products 與 categories
+     *
+     * (搜尋時須代入關鍵字  $keyword)
+     */
+    public function getProductsAndCategories($class_no = null, $class_no2=null, $class_no3=null, $keyword=null)
     {
 
         $sup_no = \App\Lib\Common::getSupplierNo();
         //取得所有products 
-        $products = \App\Product::getAllProducts($sup_no, $this->offset, $class_no, $class_no2, $class_no3);
+        $products = \App\Product::getAllProducts($sup_no, $this->offset, $class_no, $class_no2, $class_no3, $keyword);
 
         //取所有階層分類
         $categories = $this->getAllCategory($sup_no, $class_no, $class_no2);

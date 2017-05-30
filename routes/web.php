@@ -55,6 +55,10 @@ Route::get('/category/{class_no?}/{class_no2?}/{class_no3?}', 'ProductController
 //Route::get('/category/{class_no?}/{class_no2?}/{class_no3?}', 'ProductController@showProductsList');
 //---
 
+//搜尋產品
+Route::get('/products/search/{product_keyword}', 'ProductController@searchProduct');
+Route::get('/product/search/{product_keyword}', 'ProductController@searchProduct');
+
 //dm-product-page
 //Route::get('/'.$custom_path.'/product/{recno}', 'ProductController@showProduct');
 Route::get('/product/{recno}', 'ProductController@showProduct');
