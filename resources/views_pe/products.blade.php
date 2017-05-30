@@ -42,18 +42,27 @@
          <h1>產品型錄<small></small></h1>
   </div>
 
-    <div id="products" class="row">
-        @foreach($products as $product)
+    <!-- 產品列表共 3 排，一排 4 個產品圖，一頁共 12 個產品 -->
+    <!-- 所以 div class="row" 要有 3 排，而非 1 排 -->
+        @for ($i=0; $i<count($products); $i++)
+        {{--@foreach($products as $product)--}}
+        @if (($i+1)%4 == 0)
+            <div id="products" class="row">
+        @endif
             <div id="prodbox" class="col-md-3 col-xs-6">
-                <a href="/product/{{$product->recno}}">
-                    <img class="img-responsive" src="{{$product->image_path}}" alt="product_image_not_found" />
-                    <p>{{$product->pname}}</p>
+                <a href="/product/{{$products[$i]->recno}}">
+                    <img class="img-responsive" src="{{$products[$i]->image_path}}" alt="product_image_not_found" />
+                    <p>{{$products[$i]->pname}}</p>
                 </a>
             </div>
-        @endforeach
+
+        @if (($i+1)%4 == 0)
+            </div>
+        @endif
+        {{--@endforeach--}}
+        @endfor
         {{ $products->links() }}
 
-    </div>
 
 </div>
 @stop
