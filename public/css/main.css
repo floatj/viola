@@ -170,7 +170,20 @@ body {
 	line-height:30px;
 	padding-top:20px;
 	}
+/* 產品介紹 的 p 或 div */
+#product_intro p{
+	font-size:18px;
+	color:#fff;
+	line-height:30px;
+}
 
+#product_intro div{
+	font-size:18px;
+	color:#fff;
+	line-height:30px;
+}
+
+/* 這根本沒用到 = = */
 #pro_intro{
 	font-size:18px;
 	color:#fff;
@@ -239,10 +252,27 @@ body {
 	color:#fff;
 	line-height:30px;
 	}
+
+/* workaround: 修正 news_detail 抓取廠商最新消息 div 會吃不到 css 的問題 */
+#news_content div{
+	font-size:16px;
+	color:#fff;
+	line-height:30px;
+}
 			
 #news_pic{
 	margin:30px 0 30px 0;
-	}
+    }
+
+/* workaround: 修正 news_detail 抓取廠商最新消息 html 的 div 或 p 當中的最新消息圖片 a, b 吃不到 css 的問題 */
+#news_content div img{
+    margin: 30px 0 30px 0;
+}
+
+#news_content p img{
+    margin: 30px 0 30px 0;
+}
+
 		
 #news_link{
 	float:left;
