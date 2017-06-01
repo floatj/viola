@@ -79,7 +79,11 @@ Route::get('/news/{recno?}', 'NewsinfoController@showNews');
 Route::get('/plastic', 'CustomController@showCustomPage1');
 //產品規格表
 Route::get('/spec', 'CustomController@showCustomPage2');
+Route::get('/spec/1', 'CustomController@showCustomPage2');
+
 Route::get('/spec2', 'CustomController@showCustomPage3');
+Route::get('/spec/2', 'CustomController@showCustomPage3');
+
 //地圖
 Route::get('/map', 'MapController@showMap');
 
