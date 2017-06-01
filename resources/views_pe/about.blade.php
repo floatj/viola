@@ -1,6 +1,14 @@
 @extends('layout')
 
 @section('page')
+
+<style>
+/* workaround: 修正公司介紹 圖片重複的問題 */
+#about table{
+    display: none;
+}
+</style>
+
   <div class="page-header">
          <h1>公司  簡介<small></small></h1>
   </div>
