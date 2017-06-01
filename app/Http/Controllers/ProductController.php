@@ -10,6 +10,7 @@ use \App\Supplier;
 use \App\CategoryMember;
 use App\Lib\Common;
 use \App\Lib\ReCaptcha;
+use \App\Lib\Mailer;
 use Log;
 
 class ProductController extends Controller
@@ -236,8 +237,11 @@ class ProductController extends Controller
         $recno = $input['recno'];
 
         //寫入 Model (DB)
-        $guest = new Guest();
-        $guest->addGuestInquiryRecord($input, $supplier, $sup_no, $recno);
+	// debug 測試時不寫入
+	// @TODO: 新增測試開關功能
+	//
+        //$guest = new Guest();
+        //$guest->addGuestInquiryRecord($input, $supplier, $sup_no, $recno);
 
         //寄信
         $this->inquiryProductSendMails($input, $supplier, $sup_no, $recno);
@@ -314,16 +318,19 @@ class ProductController extends Controller
         //$subject=mb_convert_encoding ($subject, 'BIG5', 'UTF-8' );    //先不轉編碼
         //$message=mb_convert_encoding ($message, 'BIG5', 'UTF-8' );
 
-        //寄信 (給廠商)
-        $ret = mail( $sup_mail, $subject, $message, $other );
+	//使用 Mailer 寄信 (給廠商)
+        //@todo 這只是 workaround ，需要修正!!
+        $mailer = new Mailer;
+        $ret = $mailer->sendMail( $sup_mail, $subject, $message, $other );
 
         //Log //@todo: Log 日後有時間要修改的完善一點
-        if($ret){
+        if($ret == "202 Accepted")
+        {
             //寄信成功
             Log::info('產品詢問函 - 寄信給廠商成功!'.$sup_mail);
         }else{
             //寄信失敗
-            Log::info('產品詢問函 - 寄信給廠商失敗!!'.$sup_mail);
+            Log::info('產品詢問聯絡函 - 寄信給廠商失敗!!'.$sup_mail."。錯誤訊息：$ret");
         }
 
         //------------------------------------------------------//
@@ -345,16 +352,19 @@ class ProductController extends Controller
         //$subject=mb_convert_encoding ($subject, 'BIG5', 'UTF-8' );
         //$message2=mb_convert_encoding ($message2, 'BIG5', 'UTF-8' );
 
-        //寄信 (給填詢問表單的訪客)
-        mail($user_email, $subject, $message2, $other);
+
+        //使用 Mailer 寄信 (給填詢問表單的訪客)
+        //@todo 這只是 workaround ，需要修正!!
+        $ret = $mailer->sendMail($user_email, $subject, $message2, $other);
 
         //Log //@todo: Log 日後有時間要修改的完善一點
-        if($ret){
+	if($ret == "202 Accepted")
+	{
             //寄信成功
             Log::info('產品詢問函 - 寄信給訪客成功! '.$user_email);
         }else{
             //寄信失敗
-            Log::info('產品詢問函 - 寄信給訪客失敗!! '.$user_email);
+            Log::info('產品詢問函 - 寄信給訪客失敗!! '.$user_email."。錯誤訊息：$ret");
         }
 
     }
