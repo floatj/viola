@@ -25,15 +25,17 @@ Route::get('/', function () {
 $custom_path="demo";
 
 //首頁
-Route::get('/', 'SupplierController@showInfo');
-Route::get('/about', 'SupplierController@showInfo');
-
+//Route::get('/', 'SupplierController@showInfo');
+Route::get('/', 'ProductController@showHotProducts');
 //---
 
-//公司介紹
+//公司簡介
 Route::get('/'.$custom_path.'/', 'SupplierController@showInfo');
-
+Route::get('/about', 'SupplierController@showInfo');
 //---
+
+//熱門產品
+Route::get('/hot_products/', 'ProductController@showHotProducts');
 
 //dm list
 Route::get('/'.$custom_path.'/products_list/', 'ProductController@showProductsList'); //list
