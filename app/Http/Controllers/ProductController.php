@@ -84,16 +84,34 @@ class ProductController extends Controller
 
 
     /**
+     *  顯示熱門產品
+     */
+    public function showHotProducts()
+    {
+        //取 products 與 categories
+        list($products, $categories) = $this->getProductsAndCategories(null, null, null, null, true);
+
+        //取得 image 路徑
+        foreach($products as $key=>$product) {
+            $products[$key]->image_path = $this->getProductImage($product->recno, "_min");
+        }
+
+        return view('hot_products', ["products"=>$products]);
+    }
+
+
+    /**
      * 列舉或搜尋 products 與 categories
      *
-     * (搜尋時須代入關鍵字  $keyword)
+     * 搜尋產品：  $keyword 須帶入搜尋關鍵字
+     * 熱門產品：  $hot_products 需指定為 true
      */
-    public function getProductsAndCategories($class_no = null, $class_no2=null, $class_no3=null, $keyword=null)
+    public function getProductsAndCategories($class_no = null, $class_no2=null, $class_no3=null, $keyword=null, $hot_product=null)
     {
 
         $sup_no = \App\Lib\Common::getSupplierNo();
         //取得所有products 
-        $products = \App\Product::getAllProducts($sup_no, $this->offset, $class_no, $class_no2, $class_no3, $keyword);
+        $products = \App\Product::getAllProducts($sup_no, $this->offset, $class_no, $class_no2, $class_no3, $keyword, $hot_product);
 
         //取所有階層分類
         $categories = $this->getAllCategory($sup_no, $class_no, $class_no2);
