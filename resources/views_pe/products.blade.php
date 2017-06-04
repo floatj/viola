@@ -49,12 +49,12 @@
     <!-- 所以 div class="row" 要有 3 排，而非 1 排 -->
         @for ($i=0; $i<count($products); $i++)
         {{--@foreach($products as $product)--}}
-        @if (($i+1)%4 == 0)
+        @if ($i %4 == 0)
             <div id="products" class="row">
         @endif
             <div id="prodbox" class="col-md-3 col-xs-6">
                 <a href="/product/{{$products[$i]->recno}}">
-                    <img class="img-responsive" src="{{$products[$i]->image_path}}" alt="product_image_not_found" />
+                    <img class="img-responsive" src="{{$products[$i]->image_path}}" alt="{{$products[$i]->pname}}" />
                     <p>{{$products[$i]->pname}}</p>
                 </a>
             </div>
