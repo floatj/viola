@@ -47,9 +47,12 @@ class Product extends Model
                 ($c_no1 != null) and $query->where(self::FIELD_CLASS_MC1, $c_no1);      //取分類屬於第1層class_id的product;
                 ($c_no2 != null) and $query->where(self::FIELD_CLASS_MC2, $c_no2);      //取分類屬於第2層class_id的product;
                 ($c_no3 != null) and $query->where(self::FIELD_CLASS_MC3, $c_no3);      //取分類屬於第3層class_id的product;
-            })
-            ->paginate($offset);     //分頁
-            //->get();
+            });
+
+        if (! $hot_product) 
+            $query = $query->paginate($offset);      //非熱門產品頁面需分頁
+        else
+            $query = $query->get();                  //熱門產品不須分頁
 
         return $query;
     }
