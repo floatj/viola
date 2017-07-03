@@ -36,5 +36,6 @@
     @endif
     {{--@endforeach--}}
     @endfor
-    {{ $products->links() }}
+    {{--熱門產品不用分頁--}}
+    {{-- $products->links() --}}
 @stop
