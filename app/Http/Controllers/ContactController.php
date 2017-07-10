@@ -88,11 +88,12 @@ class ContactController extends Controller
         unset($input['_token']);
         unset($input['g-recaptcha-response']);
 
-	//寫入 Model (DB)
-	// debug: 測試時不寫入
+     	//寫入 Model (DB)
+	    // debug: 測試時不寫入
         // @TODO: 新增測試開關功能
-	//$guest = new Guest();
-        //$guest->addGuestInquiryRecord($input, $supplier, $sup_no);
+
+	    $guest = new Guest();
+        $guest->addGuestInquiryRecord($input, $supplier, $sup_no);
 
         //寄信
         $this->inquiryProductSendMails($input, $supplier, $sup_no);
@@ -151,8 +152,8 @@ class ContactController extends Controller
         //廠商的收信email
 
         $service_email = "service@bysources.com";       //百索信箱
-        //$sup_mail=$supplier[0]->email;
-        $sup_mail = "floatj@gmail.com";         //廠商  email
+        $sup_mail=$supplier[0]->email;              //廠商 email
+        // $sup_mail = "floatj@gmail.com";         //廠商  email (debug) 
         $user_email  = $insert_data['email'];   //詢問者 email
 
         $subject="=?UTF-8?B?".base64_encode("百索商情網EIP網站聯絡信- ".$insert_data['subject'])."?=";
