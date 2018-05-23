@@ -23,7 +23,17 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //限制路由帶入的參數必須符合以下正規表示法
+
+        //限制產品分類路由的參數必須為數字 (class_no, class_no2, class_no3)
+        Route::pattern('class_no', '[0-9]+');
+        Route::pattern('class_no2', '[0-9]+');
+        Route::pattern('class_no3', '[0-9]+');
+
+        //限制最新消息路由的參數必須為數字
+        //限制詢問產品路由的參數必須為數字
+        Route::pattern('recno', '[0-9]+');
+
 
         parent::boot();
     }

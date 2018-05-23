@@ -1,0 +1,500 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+	padding-top: 0px;
+	background-color:#fff;
+    }
+
+/* 縮小導覽列各連結的間距，避免畫面不正常換行　*/
+/*
+.navbar-nav > li{
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+*/
+.nav > li > a{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+	   
+.navbar-brand{
+	padding:5px 5px;    
+    }
+.navbar-brand img{
+	height:60px;   
+    }  
+			
+.tw1{
+	padding-left:0px;
+}
+.tw2{
+	padding-left:10px;
+}
+		
+		
+.sub-title{
+    font-weight:bold;
+	color:#777;
+	text-align:center;
+}	
+
+.footer{
+	width: 100%;
+    height:120px;
+	background: url(../img/foot_bg.png) repeat-x;
+	}
+			
+.footer p {
+    color:#fff;
+    font-size:13px;
+    text-align:center;
+    padding-top: 30px;   
+    }
+			
+.footer p a {
+    color:#fff;
+	text-decoration:none;
+    }
+
+.searchBox{
+	margin-top:10px;
+	}
+	
+#hotprod{
+	margin-bottom:20px;
+	}
+#hotprod img{
+	margin-bottom:20px;
+	}
+#hotprod p{
+	font-family:微軟正黑體;
+	font-size:16px;
+	color:#666;
+	font-weight:bold;
+	text-align:center;
+	}	
+	
+#about{
+	margin-bottom:20px;
+	padding:10px;
+	}
+	
+#about p{
+	color:#000;
+    font-size:16px;
+	}
+
+.page-header h1{
+	font-size:24px;
+	color:#000;
+	}
+	
+	
+
+
+/* pro */
+
+#products{
+	margin-bottom:20px;
+	}
+#products img{
+	margin-bottom:10px;
+	}
+
+＃pro_menu ul{
+	color:#fff;
+    font-size:20px;
+	}
+＃pro_menu ul li a{
+	color:#000;
+    font-size:16px;
+	text-decoration:none;
+	}
+	
+.phh{
+	color:#999;
+    font-size:16px;
+	}	
+.pmm a{
+	color:#333;
+    font-size:18px;
+	text-decoration:none;
+	}	
+	
+#prodbox{
+	margin-bottom:20px;
+	}
+#prodbox a p{
+	font-family:微軟正黑體;
+	font-size:16px;
+	color:#000;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+	}
+#prodbox a:hover p{
+	color:#52b743;
+	text-decoration:none;
+	}
+	
+#pro_pic{
+	margin:0px 0 20px 0;
+	}
+		
+#pro_h1{
+	font-size:24px;
+	color:#000;
+	margin:0px 0 10px 0;
+	}
+	
+#pro_h2{
+	font-size:18px;
+	color:#000;
+	margin:5px 0 20px 0;
+	border-bottom:1px #b0b0b0 solid;
+	padding-bottom:20px;
+	}
+
+#pro_h3{
+	font-size:16px;
+	color:#000;
+	margin:5px 0 10px 0;
+	padding-left:35px;
+	background:url(../img/i_see.png) no-repeat left -4px;
+	}
+
+#pro_h4{
+	font-size:24px;
+	color:#000;
+	margin:5px 0 20px 0;
+	}
+	
+#pro_format{
+	width:50%;
+	font-size:18px;
+	border:1px #bfbfbf solid;
+	border-radius:4px;
+	padding:10px 20px 10px 20px;
+	margin-bottom:30px;
+	}
+
+
+	
+#pro_ask{
+	text-align:right;
+	margin:10px 0 50px 0;
+	}
+			
+#pro_price{
+	text-align:right;
+	font-size:28px;
+	color:#000;
+	line-height:30px;
+	padding-top:20px;
+	}
+/* 產品介紹 的 p 或 div */
+#product_intro p{
+	font-size:18px;
+	color:#000;
+	line-height:30px;
+}
+
+#product_intro div{
+	font-size:18px;
+	color:#fff;
+	line-height:30px;
+}
+
+/* 這根本沒用到 = = */
+#pro_intro{
+	font-size:18px;
+	color:#fff;
+	line-height:30px;
+	}
+
+＃pro_btn{
+	text-align:center;
+	margin:10px 0 50px 0;
+	}
+
+#pro_title{
+	color:#000;
+	font-size:18px;
+	margin-bottom:20px;
+	}
+	
+	
+
+/* Newsroom */
+
+#news{
+	margin-bottom:30px;
+	padding:10px 20px;
+	}
+		
+#news_list{
+	margin-bottom:20px;
+	padding-bottom:20px;
+	border-bottom:1px #ddd dotted;
+	}
+	
+#news_date{
+	font-size:16px;
+	color:#999;
+	}
+
+#news_title a{
+	font-size:18px;
+	color:#52b743;
+	text-decoration:none;
+	}
+	
+#news_detail{
+	color:#333;
+	margin:0px 0px 50px -10px;
+	}
+	
+#news_dtitle{
+	font-size:18px;
+	color:#52b743;
+	margin:20px 0 5px 0;
+	}
+	
+#news_ddate{
+	font-size:12px;
+	color:#999;
+	margin:0px 0 0px 0;
+	}
+	
+#news_content{
+	margin:30px 0 30px 0;
+	}
+#news_content p{
+	font-size:16px;
+	color:#fff;
+	line-height:30px;
+	}
+
+/* workaround: 修正 news_detail 抓取廠商最新消息 div 會吃不到 css 的問題 */
+#news_content div{
+	font-size:16px;
+	color:#fff;
+	line-height:30px;
+}
+			
+#news_pic{
+	margin:30px 0 30px 0;
+    }
+
+/* workaround: 修正 news_detail 抓取廠商最新消息 html 的 div 或 p 當中的最新消息圖片 a, b 吃不到 css 的問題 */
+#news_content div img{
+    margin: 30px 0 30px 0;
+}
+
+#news_content p img{
+    margin: 30px 0 30px 0;
+}
+
+		
+#news_link{
+	float:left;
+	margin:10px 0 10px 0;
+	}
+	
+#news_btn{
+	text-align:center;
+	margin:10px 0 50px 0;
+	}
+
+/* 必填符號 */
+.required_mark{
+    font-weight: bold;
+    color: red;
+}
+
+/* contact */
+	
+#contact{
+	margin-bottom:20px;
+	padding:10px;
+	}
+	
+.con_list{
+	color: #000;
+	margin-bottom:10px;
+}
+
+		
+.con_input{
+	width:99%;
+	height:30px;
+	color:#000;
+}
+
+.con_inputs{
+	width:40%;
+	height:30px;
+	}
+	
+.con_inputs2{
+	width:60%;
+	height:30px;
+	}	
+
+.con_textarea{
+	color:#000;
+}
+
+#con_btn{
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:50px;
+	}
+
+#con_btn2{
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:50px;
+}	
+		
+a.btn_gray{
+	font-size:18px;
+	color:#fff;
+	/*padding:4px 10px 6px 10px;*/
+	/* UX tuning:make the button much bigger, */
+	padding:6px 12px 8px 12px;
+	margin:6px;
+	border-radius:5px;
+	background-color:#303030;
+	text-decoration:none;
+	}
+a:hover.btn_gray{
+	color:#ddd;
+	background-color:#303030;
+	}		
+
+
+#map{
+	margin-bottom:20px;
+	text-align:center;
+	}
+#map img{
+	margin-bottom:20px;
+	margin:0 auto;
+	}
+
+#orbox{
+	margin-bottom:0px;
+}
+	
+#spec{
+	float:left;
+	margin-bottom:20px;
+}	
+
+#spec_nav{
+	color:#999;
+	font-size:16px;
+	text-align:right;
+	padding-right:20px;
+	margin-bottom:20px;
+	}	
+	
+#spec_nav a{
+	color:#999;
+	font-size:16px;
+	text-decoration:none;
+	margin:0 10px;
+	}
+	
+#spec_nav a:hover{
+	color:#555;
+	text-decoration:none;
+	}
+	
+		
+@media (max-width: 480px) {
+	
+body {
+	padding-top: 50px;
+	background-color:#fff;
+    }
+		
+.navbar-brand{
+	padding:5px 5px;    
+    }
+.navbar-brand img{
+	height:40px;   
+    }  
+	
+.navbar-nav li{
+	text-align:center;
+	}
+	
+	
+	
+	}
+
+
+/* 客戶聯絡頁面 自訂訊息css */
+
+/*標題樣式字15級*/
+.a16_01 {
+	font-size: 16px;
+	color: #000000;
+	line-height: 25px;
+	font-weight: 700;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #333333;
+}
+.a16_02 {font-size: 16px;color: #ff6600;line-height: 25px;}
+.a16_03 {font-size: 16px;color: #006699;line-height: 25px;font-weight: 700;}
+.a16_04 {font-size: 16px;color: #336600;line-height: 25px;}
+.a16_05 {font-size: 16px;color: #ff0066;line-height: 25px;}
+.a16_06 {font-size: 16px;color: #333333;line-height: 25px;}
+.a16_07 {
+	font-size: 16px;
+	color: #006699;
+	line-height: 25px;
+	font-weight: 700;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+}
+.a16_08 {
+	font-size: 16px;
+	color: #333333;
+	line-height: 25px;
+	font-weight: 700;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+}
+
+/*關閉的link button*/
+a.btn_disabled{
+	pointer-events: none;
+	cursor: not-allowed;
+	color: #5e5e5e;
+}
+
+a:hover.btn_disabled{
+	pointer-events: none;
+	cursor: not-allowed;
+	color: #9e9e9e;
+}
+
+#admin_link {color:#8c8c8c}
+
+/* "聯絡我們"的額外訊息 (最上面) */
+#sup_message{
+    color: black;
+}

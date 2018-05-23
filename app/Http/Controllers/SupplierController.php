@@ -21,7 +21,7 @@ class SupplierController extends Controller
 
         $supplier = \App\Supplier::getSupplierInfo($sup_no);
 
-        return view('demo/index', ["supplier"=>$supplier]);
+        return view('about', ["supplier"=>$supplier]);
     }
 
 }

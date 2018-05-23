@@ -26,5 +26,6 @@
         </tbody>
     </table>
 
+    {{ $newsinfo->links() }}
 
 @stop

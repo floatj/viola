@@ -16,7 +16,10 @@ return [
     |
     */
 
+    //modified due to NFS issue:
+    //ref: https://stackoverflow.com/questions/29169892/errorexception-in-filesystem-php
     'driver' => env('SESSION_DRIVER', 'file'),
+    //'driver' => 'cookie',
 
     /*
     |--------------------------------------------------------------------------

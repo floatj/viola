@@ -11,6 +11,8 @@ class Newsinfo extends Model
 
     //欄位名稱
     const FIELD_SUP_NO = 'sup_no';
+    const FIELD_A_TIME = 'a_time';
+    const FIELD_REC_NO = 'recno';
 
     /**
      *
@@ -19,10 +21,23 @@ class Newsinfo extends Model
      * @int $sup_no  supplier number for identity
      */
 
-    public static function getAllNewsinfo($sup_no)
+    public static function getAllNewsinfo($sup_no, $offset = 9)
     {
         $query = self::where(self::FIELD_SUP_NO, $sup_no)
-            ->get();
+            ->orderBy(self::FIELD_A_TIME, 'DESC')
+            //->get();
+            ->paginate($offset);     //分頁
+
+        return $query;
+    }
+
+    public static function getNews($sup_no, $recno, $offset = 9)
+    {
+        $query = self::where(self::FIELD_SUP_NO, $sup_no)
+            ->where(self::FIELD_REC_NO, $recno)
+            ->orderBy(self::FIELD_A_TIME, 'DESC')
+            ->get()
+            ->first();  //只會有一項，所以直接取那一項，避免在 view 還要指定 collection[0]
 
         return $query;
     }
