@@ -11,7 +11,7 @@
   </div>
 
   <!--客戶額外的 html 內容-->
-  <div id="sup_message" style="color:#FFF">
+  <div id="sup_message">
   <table width="640" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
           <tr>
@@ -61,13 +61,13 @@
 
     <div id="contact" class="row">
 
-      <div class="col-md-6 col-xs-12 con_list">* 您的姓名：<br><input class="con_input" type="text" name="author"></div>
+      <div class="col-md-6 col-xs-12 con_list"><span class="required_mark">* </span>您的姓名：<br><input class="con_input" type="text" name="author"></div>
       <div class="col-md-6 col-xs-12 con_list">公司名稱：<br><input class="con_input" type="text" name="company"></div>
       <div class="col-md-6 col-xs-12 con_list">電　　話：<br><input class="con_input" type="text" name="tel"></div>
       <div class="col-md-6 col-xs-12 con_list">傳　　真：<br><input class="con_input" type="text" name="fax"></div>
       <div class="col-md-12 col-xs-12 con_list">住　　址：<br><input class="con_input" type="text" name="address"></div>
-      <div class="col-md-12 col-xs-12 con_list">* 電子郵件：<br><input class="con_input" type="text" name="email"></div>
-      <div class="col-md-12 col-xs-12 con_list">* 主　　旨：<br><input class="con_input" type="text" name="subject"
+      <div class="col-md-12 col-xs-12 con_list"><span class="required_mark">* </span>電子郵件：<br><input class="con_input" type="text" name="email"></div>
+      <div class="col-md-12 col-xs-12 con_list"><span class="required_mark">* </span>主　　旨：<br><input class="con_input" type="text" name="subject"
                                                                   value=""></div>
       <div class="col-md-12 col-xs-12 con_list">內　　容：<br><textarea class="medium con_textarea" name="body"
                                                                    rows="5" style="width:99%;"></textarea></div>

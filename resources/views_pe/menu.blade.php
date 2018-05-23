@@ -10,14 +10,14 @@
           <a class="navbar-brand" href="/"><img src="{{ asset('img/logo.png') }}" class="img-responsive"></a></div>
         
                         
-        <div id="navbar" class="navbar-collapse collapse" style="padding:10px 0;">
+        <div id="navbar" class="navbar-collapse collapse" style="padding:5px 0;">
 
           <ul class="navbar-nav navbar-right nav">
-            <li><a href="/">首頁</a></li>
             <li><a href="/about">公司簡介</a></li>
             <li><a href="/news">最新消息</a></li>
             <li><a href="/products">產品型錄</a></li>
             <li><a href="/spec">產品規格表</a></li>
+            <li><a href="/order">訂購單</a></li>
             <li><a href="/plastic">認識塑膠</a></li>
             <li><a href="/map">交通指引</a></li>
             <li><a href="/contact">聯絡我們</a></li>

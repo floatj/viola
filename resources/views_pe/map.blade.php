@@ -3,7 +3,7 @@
 @section('page')
 
     <div class="page-header">
-         <h1>交通指引<small> / Traffic Control</small></h1>
+         <h1>交通指引<small> / Map</small></h1>
     </div>
 
     <!--google map embed-->

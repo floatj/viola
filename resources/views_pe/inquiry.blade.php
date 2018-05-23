@@ -34,7 +34,7 @@
     
     </div>
     
-    <div id="pro_title" class="row">請填妥以下表單資料，我們將會儘快與您聯絡，並提供最優質的服務。（＊必填 ）</div>
+    <div id="pro_title" class="row">請填妥以下表單資料，我們將會儘快與您聯絡，並提供最優質的服務。（欄位前面有 ＊ 符號，為必填欄位 ）</div>
 
   <form id="inquiry_form" name="inquiry_form" action="/inquiry" method="post" onsubmit="return check_form(this)">
       <!--csrf token-->
@@ -43,16 +43,16 @@
       <input name="recno" type="hidden" id="recno" value="{{$product->recno}}" />
       <div id="contact" class="row">
 
-          <div class="col-md-6 col-xs-12 con_list">* 您的姓名：<br><input class="con_input" type="text" name="author"></div>
+          <div class="col-md-6 col-xs-12 con_list"><span class="required_mark">* </span> 您的姓名：<br><input class="con_input" type="text" name="author"></div>
           <div class="col-md-6 col-xs-12 con_list">公司名稱：<br><input class="con_input" type="text" name="company"></div>
           <div class="col-md-6 col-xs-12 con_list">電　　話：<br><input class="con_input" type="text" name="tel"></div>
           <div class="col-md-6 col-xs-12 con_list">傳　　真：<br><input class="con_input" type="text" name="fax"></div>
           <div class="col-md-12 col-xs-12 con_list">住　　址：<br><input class="con_input" type="text" name="address"></div>
-          <div class="col-md-12 col-xs-12 con_list">* 電子郵件：<br><input class="con_input" type="text" name="email"></div>
+          <div class="col-md-12 col-xs-12 con_list"><span class="required_mark">* </span>電子郵件：<br><input class="con_input" type="text" name="email"></div>
           <div class="col-md-12 col-xs-12 con_list">編　　號：<br><input class="con_input" type="text" name="pnum" value="{{$product->pnum}}"></div>
           <div class="col-md-12 col-xs-12 con_list">產品名稱：<br><input class="con_input" type="text" name="pname"
                                                                     value="{{$product->pname}}"></div>
-          <div class="col-md-12 col-xs-12 con_list">* 主　　旨：<br><input class="con_input" type="text" name="subject"
+          <div class="col-md-12 col-xs-12 con_list"><span class="required_mark">*</span> 主　　旨：<br><input class="con_input" type="text" name="subject"
                                                                        value="詢問 - {{$product->pname}}"></div>
           <div class="col-md-12 col-xs-12 con_list">您的需求：<br><textarea class="medium con_textarea" name="body"
                                                                        rows="5" style="width:99%;"></textarea></div>

@@ -99,3 +99,7 @@ Route::post('/contact/', 'ContactController@contactSubmit');
 
 //map
 Route::get('/'.$custom_path.'/map/', 'ContactController@showMapPage');
+
+//訂購單
+Route::get('/order/', 'OrderController@showOrderForm');
+Route::post('/order/', 'OrderController@OrderFormSubmit');

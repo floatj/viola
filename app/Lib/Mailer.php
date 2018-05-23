@@ -18,6 +18,7 @@ class Mailer
 		curl_setopt($ch, CURLOPT_URL, "http://172.17.42.1/api/mango/mail.php");
 		curl_setopt($ch, CURLOPT_POST, true); // 啟用POST
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Host: tw.bysources.com'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //輸出導向到變數
 		curl_setopt($ch, CURLOPT_POSTFIELDS, 
 			    http_build_query( array( "mail_addr"=>$mail_addr, "subject"=>$subject, 
 					    	     "message"=>$message, "other"=>$other, "password"=>$pwd_md5
