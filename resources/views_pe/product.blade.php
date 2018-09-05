@@ -54,10 +54,10 @@
 
 
 	//為了解決上面的Bug...
-	//走訪表格所有 td ，如果該 td 沒有設定 bgcolor ，則強制設定 bgcolor 為 #FFF
+	//走訪表格所有 td ，如果該 td 沒有設定 bgcolor ，則強制設定 bgcolor 為 #FFFFFF
 	$("td").each(function() {
 	    var bgcolor = $(this).attr("bgcolor");
-	    if(typeof bgcolor == "undefined") $(this).attr('bgcolor', '#FFF');
+	    if(typeof bgcolor == "undefined") $(this).attr('bgcolor', '#ffffff');
 	});	
 
         //產品介紹表格內的 html 如有 表格 也套用 bootstrap css (移除 width 屬性, 增加 class="table" 屬性)
