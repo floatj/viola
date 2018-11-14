@@ -26,15 +26,15 @@
                 </tr>
                 <tr>
                   <td height="30" align="right"><strong>銀行：</strong></td>
-                  <td align="left" class="a16_03">台中市第二信用合作社 太平分社</td>
+                  <td align="left" class="a16_03">台灣土地銀行 太平分行</td>
                 </tr>
                 <tr>
                   <td height="30" align="right"><strong>代號：</strong></td>
-                  <td align="left" class="a16_05">146</td>
+                  <td align="left" class="a16_05">005</td>
                 </tr>
                 <tr>
                   <td height="30" align="right"><strong>帳號：</strong></td>
-                  <td align="left" class="a16_05"><strong><span style="font-size:24px;">01660020001897</span></strong></td>
+                  <td align="left" class="a16_05"><strong><span style="font-size:24px;">072001047699</span></strong></td>
                 </tr>
                 </tbody>
               </table></td>
