@@ -11,3 +11,10 @@ Homestead.yaml
 
 # config file
 config/viola.php
+
+# 協和留下來的檔案，暫時先保留，日後再慢慢檢查刪除不需要的，但先不加入 VCS
+app/Http/Middleware/DomainRouter.php
+app/Http/Middleware/DomainRouting.php
+public/img_bk/
+resources/views_lh/
+vendor.zip
