@@ -27,6 +27,26 @@
              
              <div id="pro_ask"><a href="/inquiry/{{$product->recno}}" class="btn_gray">詢問產品</a></div>
 
+             <!-- share to social media-->
+<!--
+             <div id="pro_share">
+                <a href="#">
+                    <img src="" alt="share to facebook"/>
+                </a>
+
+            </div>
+-->
+  <!-- FB share button -->
+  <div class="fb-share-button" 
+    data-href="{{url()->current()}}" data-layout="button">
+  </div>
+  
+<div style="margin-top:16px; display:inline-block; ">
+  <div class="line-it-button" data-lang="zh_Hant" data-type="share-b" data-url="{{url()->current()}}" style="display: none; margin-top:10px;"></div>
+  <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+</div>
+
+
            </div>
     
     </div>
@@ -40,7 +60,16 @@
 @stop
 
 @section('js')
+<div id="fb-root"></div>
 <script>
+    /* FB */
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
 
     $(document).ready(function(){
 	/* 覆寫表格背景色(如果沒有背景色的話)，覆寫表格 bootstrap css (class="table") 以使表格 responsive 行為正確 */
