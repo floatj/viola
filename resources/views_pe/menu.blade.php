@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
+      <div class="container" style="background-color:#98FF98">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -7,18 +7,25 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img src="{{ asset('img/logo.png') }}" class="img-responsive"></a></div>
+
+            <!--logo 1 + 2 -->
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('img/logo.png') }}" class="img-responsive">
+            </a>
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('img/logo2.png') }}" class="img-responsive">
+            </a>
+        </div>
         
                         
         <div id="navbar" class="navbar-collapse collapse" style="padding:5px 0;">
 
           <ul class="navbar-nav navbar-right nav">
-            <li><a href="/about">公司簡介</a></li>
+            <li><a href="/about">關於我們</a></li>
             <li><a href="/news">最新消息</a></li>
             <li><a href="/products">產品型錄</a></li>
-            <li><a href="/spec">產品規格表</a></li>
-            <li><a href="/order">訂購單</a></li>
-            <li><a href="/plastic">認識塑膠</a></li>
+            <li><a href="/fDownload">檔案下載</a></li>
+            <li><a href="/board">訪客留言</a></li>
             <li><a href="/map">交通指引</a></li>
             <li><a href="/contact">聯絡我們</a></li>
             <li><div class="searchBox"><!-- searchBox -->
@@ -50,17 +57,17 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{ asset('img/ad01.jpg') }}" alt="最新商品圖">
+      <img src="{{ asset('img/ad/A001.jpg') }}" alt="最新商品圖">
       <div class="carousel-caption">
       </div>
     </div>
     <div class="item">
-      <img src="{{ asset('img/ad02.jpg') }}" alt="最新商品圖">
+      <img src="{{ asset('img/ad/A002.jpg') }}" alt="最新商品圖">
       <div class="carousel-caption">
       </div>
     </div>
     <div class="item">
-      <img src="{{ asset('img/ad03.jpg') }}" alt="最新商品圖">
+      <img src="{{ asset('img/ad/A003.jpg') }}" alt="最新商品圖">
       <div class="carousel-caption">
       </div>
     </div>

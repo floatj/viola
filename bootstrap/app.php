@@ -47,7 +47,7 @@ $app->singleton(
 $path_storage = "/var/laravel_storage/viola";
 
 # override already $app->storagePath using the function
-$app->useStoragePath($path_storage);
+#$app->useStoragePath($path_storage);
 
 /*
 |--------------------------------------------------------------------------

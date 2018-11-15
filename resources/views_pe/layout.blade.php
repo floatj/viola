@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>協和塑膠廠股份有限公司</title>
+    <title>盈達貿易股份有限公司</title>
     <meta name="Keywords" content="" />
     <meta name="Description"content="" />
 
