@@ -26,7 +26,8 @@ $custom_path="demo";
 
 //首頁
 //Route::get('/', 'SupplierController@showInfo');
-Route::get('/', 'ProductController@showHotProducts');
+//Route::get('/', 'ProductController@showHotProducts');
+Route::get('/', 'IndexController@showIndex');
 //---
 
 //公司簡介

@@ -1,9 +1,3 @@
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
 body {
 	padding-top: 0px;
 	background-color:#fff;
@@ -19,10 +13,10 @@ body {
 }
 */
 .nav > li > a{
+	color: darkblue !important;
     padding-left: 10px;
     padding-right: 10px;
 }
-
 	   
 .navbar-brand{
 	padding:5px 5px;    
@@ -48,20 +42,29 @@ body {
 .footer{
 	width: 100%;
     height:120px;
-	background: url(../img/foot_bg.png) repeat-x;
-	}
+	/*background: url(../img/foot_bg.png) repeat-x;*/
+	background-color: rgb(244,244,244);
+}
 			
 .footer p {
-    color:#fff;
+    color:black;
     font-size:13px;
     text-align:center;
     padding-top: 30px;   
     }
 			
 .footer p a {
-    color:#fff;
+    color:black;
 	text-decoration:none;
-    }
+}
+
+.footer_bs {
+	color:gray;
+}
+.footer p a.bs{
+	color: gray;
+	text-decoration:none;
+}
 
 .searchBox{
 	margin-top:10px;
