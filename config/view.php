@@ -14,7 +14,7 @@ return [
     */
 
     'paths' => [
-        resource_path('views_pe'),
+        resource_path('views_ed'),
         resource_path('views'),
         //resource_path('demo'),
     ],
